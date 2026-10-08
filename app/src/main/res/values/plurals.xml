@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--
+      Download status is always stated in text as well as colour (PRD §8): the badge's
+      count reads out to TalkBack rather than only being a cyan dot.
+    -->
+    <plurals name="nav_downloads_active">
+        <item quantity="one">Downloads, %1$d in progress</item>
+        <item quantity="other">Downloads, %1$d in progress</item>
+    </plurals>
+
+    <plurals name="episodes_count">
+        <item quantity="one">%1$d episode</item>
+        <item quantity="other">%1$d episodes</item>
+    </plurals>
+
+    <plurals name="new_count">
+        <item quantity="one">%1$d new</item>
+        <item quantity="other">%1$d new</item>
+    </plurals>
+
+    <plurals name="downloading_episodes">
+        <item quantity="one">Downloading %1$d episode</item>
+        <item quantity="other">Downloading %1$d episodes</item>
+    </plurals>
+
+    <plurals name="expires_in_days_plural">
+        <item quantity="one">Expires in %1$d day</item>
+        <item quantity="other">Expires in %1$d days</item>
+    </plurals>
+
+    <plurals name="min_left_plural">
+        <item quantity="one">%1$d min left</item>
+        <item quantity="other">%1$d min left</item>
+    </plurals>
+
+    <!-- The Up next countdown reads out rather than relying on the ring alone. -->
+    <plurals name="upnext_seconds">
+        <item quantity="one">Next episode in %1$d second</item>
+        <item quantity="other">Next episode in %1$d seconds</item>
+    </plurals>
+</resources>

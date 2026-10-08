@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Trailer / free-title playback.
+
+  Two surfaces, one visible at a time: a WebView running YouTube's official IFrame embed
+  for trailers (the permitted route — see TrailerActivity), and a Media3 PlayerView for
+  video we may serve ourselves.
+-->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/night900">
+
+    <WebView
+        android:id="@+id/web"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:visibility="gone"
+        tools:visibility="visible" />
+
+    <androidx.media3.ui.PlayerView
+        android:id="@+id/playerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:visibility="gone"
+        app:resize_mode="fit"
+        app:show_buffering="when_playing" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_appbar_gradient"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="8dp"
+        android:paddingTop="@dimen/title_actions_top"
+        android:paddingEnd="@dimen/gutter"
+        android:paddingBottom="10dp">
+
+        <ImageView
+            android:id="@+id/btnClose"
+            style="@style/Widget.Mh.IconButton"
+            android:contentDescription="@string/cd_close_player"
+            android:src="@drawable/ic_close" />
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_weight="1"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textAppearance="@style/TextAppearance.Mh.Body.Semibold"
+            tools:text="Dune: Part Two" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/attribution"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="@color/night900"
+        android:gravity="center"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        android:textAppearance="@style/TextAppearance.Mh.Caption"
+        android:textColor="@color/cyan400"
+        android:visibility="gone"
+        tools:text="Public domain · Internet Archive"
+        tools:visibility="visible" />
+</FrameLayout>

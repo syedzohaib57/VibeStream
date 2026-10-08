@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="PosterView">
+        <!-- Corner radius. Rows use 6dp, grids 10dp, the hero and the player frame 0. -->
+        <attr name="mhCornerRadius" format="dimension" />
+        <!-- Draw the title over the fallback art. Off for backdrops and thumbnails. -->
+        <attr name="mhShowLabel" format="boolean" />
+        <!-- Bigger label inset and size, for a full-bleed poster. -->
+        <attr name="mhBigLabel" format="boolean" />
+        <attr name="mhPosterStyle" format="enum">
+            <enum name="row" value="0" />
+            <enum name="hero" value="1" />
+            <enum name="tile" value="2" />
+        </attr>
+    </declare-styleable>
+
+    <declare-styleable name="SeekRailView">
+        <attr name="mhTrackHeight" format="dimension" />
+        <attr name="mhThumbSize" format="dimension" />
+    </declare-styleable>
+
+    <declare-styleable name="ProgressRingView">
+        <attr name="mhRingStroke" format="dimension" />
+        <attr name="mhRingColor" format="color" />
+        <attr name="mhRingTrackColor" format="color" />
+    </declare-styleable>
+
+    <declare-styleable name="RosetteView">
+        <!-- Diameter of the halo, which may exceed the view's own bounds. -->
+        <attr name="mhHaloSize" format="dimension" />
+    </declare-styleable>
+</resources>

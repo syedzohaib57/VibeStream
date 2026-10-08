@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 220ms on mhEase (PRD §2.3). start/end, never left/right, so RTL is free. -->
+<set xmlns:android="http://schemas.android.com/apk/res/android"
+    android:interpolator="@interpolator/mh_ease">
+    <translate android:fromXDelta="100%p" android:toXDelta="0" android:duration="220" />
+    <alpha android:fromAlpha="0.7" android:toAlpha="1.0" android:duration="220" />
+</set>

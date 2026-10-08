@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  One poster in a ranked row (§6.1): the rank numeral, then the poster overlapping it.
+
+  Declaration order is the z-order — the numeral is first so the poster draws over it,
+  which is what makes the glyph read as a cut-out behind the card. The overlap is a
+  negative start margin on the poster (@dimen/rank_poster_overlap).
+
+  The row item, not the poster, carries the click: tapping the numeral opens the title too.
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="@dimen/poster_row_height"
+    android:layout_marginEnd="@dimen/gap_poster"
+    android:background="?attr/selectableItemBackground"
+    android:focusable="true"
+    android:orientation="horizontal">
+
+    <com.example.streamingappzb.ui.widget.RankNumeralView
+        android:id="@+id/rankNumeral"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent" />
+
+    <com.example.streamingappzb.ui.widget.PosterView
+        android:id="@+id/poster"
+        android:layout_width="@dimen/poster_row_width"
+        android:layout_height="match_parent"
+        android:layout_marginStart="@dimen/rank_poster_overlap"
+        android:importantForAccessibility="no"
+        app:mhCornerRadius="@dimen/radius_poster_row"
+        app:mhShowLabel="true"
+        tools:ignore="NegativeMargin" />
+</LinearLayout>

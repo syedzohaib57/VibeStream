@@ -1,0 +1,389 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Every user-visible string lives here (PRD §8, Localisation). English ships first;
+  layouts use start/end so a phase-2 RTL locale needs no layout changes.
+-->
+<resources>
+    <string name="app_name">VibeStream</string>
+    <!-- The wordmark is ember by rule (PRD §8.5) and is never translated. -->
+    <string name="wordmark" translatable="false">VibeStream</string>
+
+    <!-- ===================== Bottom nav ===================== -->
+    <string name="nav_home">Home</string>
+    <string name="nav_search">Search</string>
+    <string name="nav_downloads">Downloads</string>
+    <string name="nav_list">My List</string>
+    <string name="nav_upcoming">Upcoming</string>
+
+    <!-- ===================== Generic actions ===================== -->
+    <string name="action_play">Play</string>
+    <string name="action_resume">Resume</string>
+    <string name="action_my_list">My List</string>
+    <string name="action_download">Download</string>
+    <string name="action_download_season">Download season</string>
+    <string name="action_cancel">Cancel</string>
+    <string name="action_play_now">Play now</string>
+    <string name="action_next">Next</string>
+    <string name="action_retry">Retry</string>
+    <string name="action_clear">Clear</string>
+
+    <!-- ===================== Content descriptions (PRD §8) ===================== -->
+    <string name="cd_back">Back</string>
+    <string name="cd_share">Share</string>
+    <string name="cd_search">Search</string>
+    <string name="cd_downloads">Downloads</string>
+    <string name="cd_data_pill">Data use. %1$s. Opens data settings.</string>
+    <string name="cd_more_info">More information</string>
+    <string name="cd_poster">Poster for %1$s</string>
+    <string name="cd_play_title">Play %1$s</string>
+    <string name="cd_resume_title">Resume %1$s</string>
+    <string name="cd_close_player">Close player</string>
+    <string name="cd_cast">Cast to a device</string>
+    <string name="cd_pip">Picture in picture</string>
+    <string name="cd_back_10">Back 10 seconds</string>
+    <string name="cd_forward_10">Forward 10 seconds</string>
+    <string name="cd_pause">Pause</string>
+    <string name="cd_play">Play</string>
+    <string name="cd_subtitles">Subtitles</string>
+    <string name="cd_quality">Streaming quality</string>
+    <string name="cd_next_episode">Next episode</string>
+    <string name="cd_switch_source">Switch source</string>
+    <string name="cd_fullscreen">Fullscreen</string>
+    <string name="cd_exit_fullscreen">Leave fullscreen</string>
+
+    <!-- The gesture surface. Announced so a screen-reader user knows the frame itself is
+         the control, since the chrome spends most of a film hidden. -->
+    <string name="cd_player_surface">Video. Tap to show controls</string>
+
+    <!-- Player HUDs -->
+    <string name="skip_hud_seconds">%1$d</string>
+    <string name="source_chip">Source %1$d/%2$d</string>
+    <string name="scrub_hud">%1$s  %2$s</string>
+    <string name="toast_source_switched">Switched to source %1$d</string>
+    <string name="toast_only_one_source">No other source for this title</string>
+    <string name="cd_seek_bar">Seek bar</string>
+    <string name="cd_seek_position">%1$s of %2$s</string>
+    <string name="cd_download_episode">Download episode %1$d</string>
+    <string name="cd_download_pause">Pause download</string>
+    <string name="cd_download_resume">Resume download</string>
+    <string name="cd_download_delete">Delete download</string>
+    <string name="cd_add_to_list">Add to My List</string>
+    <string name="cd_remove_from_list">Remove from My List</string>
+    <string name="cd_skip_ad">Skip ad</string>
+
+    <!-- ===================== Home ===================== -->
+    <string name="chip_all">All</string>
+    <string name="chip_dramas">Dramas</string>
+    <string name="chip_films">Films</string>
+    <string name="chip_documentaries">Documentaries</string>
+
+    <string name="hero_eyebrow">Today\'s pick</string>
+    <string name="badge_hd" translatable="false">HD</string>
+    <string name="badge_cc" translatable="false">CC</string>
+    <string name="hero_new_episodes">New episodes</string>
+    <string name="hero_resume_episode">Resume Ep %1$d</string>
+
+    <string name="row_continue">Continue watching</string>
+    <string name="new_episode_strip">NEW EPISODE</string>
+
+    <!-- Row headings. In production these arrive from GET /home; the client prefers a
+         local resource when it recognises the row key so shipped rows stay localisable,
+         and falls back to the server's own title for rows it has never seen. -->
+    <string name="row_new">New episodes</string>
+    <string name="row_classic">Classic drama</string>
+    <string name="row_regional">Stories from home</string>
+    <string name="row_films">Films</string>
+    <string name="row_docs">Documentary</string>
+    <string name="row_top10">Top 10 today</string>
+
+    <!-- A ranked poster folds its position into the poster's own announcement, so a
+         screen reader says "Number 3. Poster for Moonlit Night" as one item. -->
+    <string name="cd_rank_poster">Number %1$d. Poster for %2$s</string>
+
+    <!-- The discover row already builds a full description for a slot, so a ranked one
+         only needs its position put in front. -->
+    <string name="cd_rank_prefix">Number %1$d. %2$s</string>
+
+    <!-- Episode names are catalogue content, not UI chrome: they live in
+         assets/catalog.json, the way GET /titles/{id} would serve them. -->
+
+
+    <string name="episode_min_left">E%1$d · %2$d min left</string>
+
+    <!-- ===================== Title detail ===================== -->
+    <string name="runtime_h_m">%1$dh %2$dm</string>
+    <string name="downloadable">Downloadable</string>
+    <string name="stream_only">Stream only</string>
+    <string name="stream_only_toast">This title is stream-only under its licence</string>
+    <string name="with_cast">With %1$s</string>
+    <string name="episodes">Episodes</string>
+    <string name="season_one">Season 1</string>
+    <string name="play_episode_one">Play Episode 1</string>
+    <string name="resume_at">Resume · %1$s</string>
+    <string name="resume_episode_at">Resume · Ep %1$d · %2$s</string>
+    <string name="minutes_short">%1$d min</string>
+    <string name="dot_downloaded">· Downloaded</string>
+    <string name="dot_waiting_wifi">· Waiting for Wi-Fi</string>
+    <string name="dot_percent">· %1$d%%</string>
+
+    <!-- Download sheet (FR-301..303) -->
+    <string name="sheet_download_season">Download season 1</string>
+    <string name="sheet_download_episode">Download episode %1$d</string>
+    <string name="sheet_download_film">Download %1$s</string>
+    <string name="queue_for_wifi">Queue for Wi-Fi</string>
+    <string name="use_mobile_data_now">Use mobile data now</string>
+    <string name="download_wifi_note">You\'re on mobile data. Downloads wait for Wi-Fi unless you choose otherwise.</string>
+    <string name="toast_queued_for_wifi">Queued · starts when you\'re on Wi-Fi</string>
+    <string name="toast_downloading_film">Downloading %1$s</string>
+    <string name="toast_downloading_episode">Downloading episode %1$d</string>
+
+    <!-- ===================== Player ===================== -->
+    <string name="episode_number_name">Episode %1$d · %2$s</string>
+    <string name="year_genre">%1$d · %2$s</string>
+    <string name="ad_label">Advertisement</string>
+    <string name="ad_countdown">Ad · %1$s</string>
+    <string name="skip_in">Skip in %1$d</string>
+    <string name="skip_ad">Skip ad ›</string>
+    <string name="up_next">Up next</string>
+    <string name="up_next_episode">Ep %1$d · %2$s</string>
+    <string name="quality_chip">%1$s · %2$s/hr</string>
+
+    <string name="data_note_downloaded">Playing from downloads · no data used</string>
+    <string name="data_note_saver_on">Mobile data · Data Saver caps streams at 360p</string>
+    <string name="data_note_saver_off">Mobile data · Data Saver off</string>
+    <string name="data_note_wifi">On Wi-Fi</string>
+
+    <string name="toast_cast">Looking for Chromecast devices…</string>
+    <string name="toast_pip">Picture-in-picture starts when you leave the app</string>
+
+    <!-- Quality sheet (§6.7) -->
+    <string name="sheet_quality">Streaming quality</string>
+    <string name="data_saver">Data Saver</string>
+    <string name="data_saver_sub_cell">Caps mobile-data streams at 360p</string>
+    <string name="data_saver_sub_wifi">Applies when you\'re on mobile data</string>
+    <string name="per_hour_approx">≈ %1$s/hr</string>
+    <string name="toast_saver_locked">Turn off Data Saver to stream above 360p</string>
+    <string name="locked_turn_off_saver">Turn off Data Saver to use</string>
+
+    <string name="rung_sub_144p">Extreme saver · 2G</string>
+    <string name="rung_sub_240p">Default on mobile data</string>
+    <string name="rung_sub_360p">Data Saver cap</string>
+    <string name="rung_sub_480p">Good 4G</string>
+    <string name="rung_sub_720p">Wi-Fi default</string>
+    <string name="rung_sub_1080p">Wi-Fi · TV</string>
+
+    <!-- Subtitles (FR-207) -->
+    <string name="sheet_subtitles">Subtitles</string>
+    <string name="subtitles_off">Off</string>
+    <string name="subtitles_english">English</string>
+
+    <!-- ===================== Search (§6.4) ===================== -->
+    <string name="search_hint">Titles, cast, genre</string>
+    <string name="search_try">Try “moon lit”, “palace” or “thriller”</string>
+    <string name="search_browse">Browse</string>
+    <string name="search_no_match">No matches for “%1$s”</string>
+    <string name="search_no_match_hint">Try another spelling — we match on sound as well as letters.</string>
+    <string name="search_result_meta">%1$s · %2$d · %3$s</string>
+
+    <!-- ===================== Downloads (§6.5) ===================== -->
+    <string name="downloads_in_progress">In progress</string>
+    <string name="downloads_ready">Ready to watch offline</string>
+    <string name="download_on_wifi_only">Download on Wi-Fi only</string>
+    <string name="download_on_wifi_only_sub_cell">You\'re on mobile data — new downloads will wait</string>
+    <string name="download_on_wifi_only_sub_wifi">Protects your mobile data</string>
+    <string name="smart_downloads">Smart downloads</string>
+    <string name="smart_downloads_sub">Fetch the next episode on Wi-Fi when you finish one</string>
+    <string name="toast_smart_on">Next episodes will download on Wi-Fi</string>
+    <string name="toast_smart_off">Smart downloads off</string>
+    <string name="toast_download_removed">Download removed</string>
+
+    <string name="status_waiting_wifi">Waiting for Wi-Fi</string>
+    <string name="status_paused">Paused</string>
+    <string name="status_queued">Queued</string>
+    <string name="status_percent">%1$d%%</string>
+    <string name="expires_today">Expires today</string>
+    <string name="expired">Expired</string>
+    <string name="size_and_expiry">%1$s · %2$s</string>
+    <string name="episode_and_rung">Ep %1$d · %2$s · %3$s</string>
+
+    <string name="storage_app_used">MovieHub %1$s</string>
+    <string name="storage_other">Other %1$s</string>
+    <string name="storage_free">%1$s free</string>
+
+    <string name="downloads_empty_title">Nothing downloaded yet</string>
+    <string name="downloads_empty_body">Download episodes on Wi-Fi and watch on the bus with no data.</string>
+    <string name="downloads_empty_action">Find something to download</string>
+
+    <!-- ===================== My List (§6.6) ===================== -->
+    <string name="mylist_subtitle">Saved on this phone</string>
+    <string name="mylist_empty">Tap + My List on anything to save it here. No account needed.</string>
+    <string name="toast_added_to_list">Added to My List</string>
+    <string name="toast_removed_from_list">Removed from My List</string>
+
+    <!-- ===================== Data sheet (§6.7) ===================== -->
+    <string name="sheet_data_use">Data use</string>
+    <string name="on_mobile_data">You\'re on mobile data</string>
+    <string name="on_wifi">You\'re on Wi-Fi</string>
+    <string name="offline">You\'re offline</string>
+    <!--
+      The rung and its cost are filled in from the rules that are actually in force, not
+      written into the copy: on mobile data with Data Saver off the default is 480p, and
+      an app about knowing your data cost must not keep saying 240p.
+    -->
+    <string name="on_mobile_data_sub">Streams default to %1$s · ≈ %2$s/hr</string>
+    <string name="on_wifi_sub">Streams default to %1$s · ≈ %2$s/hr</string>
+    <string name="offline_sub">Downloads still play. Rows that need the network are hidden.</string>
+    <string name="data_saver_sheet_sub">Caps mobile-data streams at 360p · ≈ 300 MB/hr</string>
+    <string name="about_per_hour">About %1$s per hour of video</string>
+    <string name="this_month">This month</string>
+    <string name="month_usage">%1$s streamed · %2$s on Wi-Fi</string>
+
+    <!-- Pill labels -->
+    <string name="pill_saver">Saver</string>
+    <string name="pill_mobile">Mobile</string>
+    <string name="pill_wifi">Wi-Fi</string>
+    <string name="pill_offline">Offline</string>
+
+    <!-- ===================== Share (FR-108) ===================== -->
+    <string name="share_subject">%1$s on MovieHub</string>
+    <string name="share_body_film">Watch %1$s on MovieHub: %2$s</string>
+    <string name="share_body_episode">Watch %1$s, episode %2$d on MovieHub: %3$s</string>
+    <string name="share_chooser">Share %1$s</string>
+
+    <!-- ===================== Notifications / permission ===================== -->
+    <string name="download_channel_name">Downloads</string>
+    <string name="download_channel_description">Progress for episodes you download to watch offline</string>
+
+    <!-- ===================== Errors / empty ===================== -->
+    <string name="error_offline_body">Downloads still play. Everything else comes back when you reconnect.</string>
+    <string name="error_playback_body">Check your connection and try again.</string>
+    <string name="error_generic">Something went wrong.</string>
+
+    <!-- ===================== Units ===================== -->
+
+    <!-- ===================== Real catalogue (TMDB / AniList) ===================== -->
+
+    <string name="type_film">Film</string>
+    <string name="type_series">Series</string>
+    <string name="type_anime">Anime</string>
+
+    <string name="tab_all">All</string>
+    <string name="tab_films">Films</string>
+    <string name="tab_series">Series</string>
+    <string name="tab_anime">Anime</string>
+
+    <string name="coming_on">Coming %1$s</string>
+    <string name="coming_soon_short">Coming soon</string>
+    <string name="rating_star">★ %1$s</string>
+    <string name="cd_rated_out_of_ten">rated %1$s out of 10</string>
+
+    <string name="action_where_to_watch">Watch</string>
+    <string name="action_watch_free">Watch free</string>
+    <string name="action_trailer">Trailer</string>
+    <string name="action_open_on">Open %1$s</string>
+
+    <string name="section_where_to_watch">Where to watch</string>
+    <string name="section_cast">Cast</string>
+    <string name="section_episodes">Episodes</string>
+    <string name="section_similar">More like this</string>
+
+    <string name="offer_free">Free</string>
+    <string name="offer_ads">Free with ads</string>
+    <string name="offer_subscription">Included with subscription</string>
+    <string name="offer_rent">Rent</string>
+    <string name="offer_buy">Buy</string>
+
+    <string name="watch_region">Availability in %1$s</string>
+    <string name="watch_none">No streaming service carries this in %1$s yet.</string>
+    <string name="watch_attribution">Streaming availability from JustWatch · Metadata from TMDB</string>
+    <string name="watch_provider_missing">%1$s is not installed — opening the web instead</string>
+
+    <!-- Stated plainly rather than hidden: the app plays what it may and is honest about
+         the rest, which is the difference between this and an app that scrapes. -->
+    <string name="playable_attribution">%1$s</string>
+    <string name="unavailable_body">Nothing to play here yet — no service in your region carries it and there is no trailer.</string>
+
+    <string name="next_episode_airs">Episode %1$d airs %2$s</string>
+    <string name="season_label">Season %1$d</string>
+    <string name="episodes_count">%1$d episodes</string>
+    <string name="seasons_count">%1$d seasons</string>
+    <string name="not_yet_aired">Not yet aired</string>
+
+    <string name="offline_showing_cached">Offline — showing what was saved last time</string>
+    <string name="setup_needs_key_title">Add a TMDB token</string>
+    <string name="setup_needs_key_body">The catalogue comes from TMDB, which is free. Paste your token into BUILT_IN_TOKEN in TmdbCredentials.kt and rebuild — get one at themoviedb.org/settings/api</string>
+
+    <string name="upcoming_empty">Nothing announced yet. Pull down to check again.</string>
+    <!-- TMDB requires this exact disclaimer wherever their data is used. -->
+    <string name="tmdb_attribution">This product uses the TMDB API but is not endorsed or certified by TMDB. Streaming availability is provided by JustWatch. Anime data from AniList.</string>
+    <string name="search_hint_media">Search films, series and anime</string>
+
+    <!-- ===== Browse ===== -->
+    <string name="sort_popular">Popular</string>
+    <string name="sort_top_rated">Top rated</string>
+    <string name="sort_newest">Newest</string>
+    <string name="browse_empty">Nothing here. Try another sort order.</string>
+
+    <!-- ===== Person ===== -->
+    <string name="person_films">Films</string>
+    <string name="person_series">Series</string>
+    <!-- "1949 · New York City"; the place is dropped when TMDB has no record of it. -->
+    <string name="person_born">%1$s · %2$s</string>
+    <string name="cd_person">%1$s, filmography</string>
+
+    <!-- ===== Detail additions ===== -->
+    <string name="detail_recommended">More like this</string>
+    <string name="detail_collection">%1$s collection</string>
+    <string name="detail_crew_heading">Crew</string>
+    <string name="detail_studios">Studios</string>
+    <string name="detail_networks">Networks</string>
+    <!-- Shown under the title when the original-language title differs. -->
+    <string name="detail_original_title">Original title: %1$s</string>
+
+    <!-- ===== Your library ===== -->
+    <string name="library_sheet_title">Your library</string>
+    <string name="library_row_label">Your library</string>
+    <string name="library_row_not_set_up">No folders yet</string>
+    <!-- "3 folders · 412 files" -->
+    <string name="library_row_sub">%1$s · %2$s</string>
+    <string name="library_folders_count">%1$d folders</string>
+    <string name="library_one_folder">1 folder</string>
+    <string name="library_files_count">%1$d files</string>
+    <string name="library_add_folder">Add a folder</string>
+    <string name="library_add_folder_sub">Any folder of video files on this device, an SD card or a USB drive</string>
+    <string name="library_remove_folder_sub">Tap to remove</string>
+    <string name="library_folder_added">Folder added. Indexing…</string>
+    <string name="library_folder_removed">Folder removed</string>
+    <string name="library_folder_already_added">That folder is already in the library</string>
+    <string name="library_folder_failed">Could not keep access to that folder</string>
+    <string name="library_scanning">Indexing…</string>
+    <string name="library_rescan">Rescan folders</string>
+    <string name="library_rescan_sub">Pick up files you have added or removed since the app opened</string>
+    <string name="library_empty_footer">Add a folder and anything in it plays here, matched to the catalogue by filename. Titles with no file fall back to the Internet Archive, then to the provider that carries them.</string>
+    <!-- "412 files indexed across 3 folders" -->
+    <string name="library_indexed_footer">%1$d files indexed across %2$s</string>
+    <string name="library_open_archive">Search the whole Internet Archive</string>
+    <string name="library_open_archive_sub">Finds far more, including uploads whose provenance nobody has checked</string>
+    <string name="library_sample_fallback">Sample stream fallback</string>
+    <string name="library_sample_fallback_sub">When nothing else resolves, play a sample so the player can be exercised. Not the real title.</string>
+    <string name="cd_remove_folder">Remove %1$s</string>
+
+    <!-- ===== Media server (Jellyfin) ===== -->
+    <string name="jellyfin_row_label">Media server</string>
+    <string name="jellyfin_row_not_connected">Connect a Jellyfin server</string>
+    <!-- "zohaib · 192.168.1.5:8096" -->
+    <string name="jellyfin_row_connected">%1$s · %2$s</string>
+    <string name="jellyfin_row_disconnect_sub">Tap to disconnect</string>
+    <string name="jellyfin_sheet_title">Connect your server</string>
+    <string name="jellyfin_sheet_sub">A Jellyfin server you run. Everything in its library plays here in full, matched to the catalogue exactly.</string>
+    <string name="jellyfin_hint_url">Server address, e.g. 192.168.1.5:8096</string>
+    <string name="jellyfin_hint_user">Username</string>
+    <string name="jellyfin_hint_password">Password</string>
+    <string name="jellyfin_connect">Connect</string>
+    <string name="jellyfin_connecting">Connecting…</string>
+    <string name="jellyfin_connected_toast">Connected to %1$s</string>
+    <string name="jellyfin_disconnected_toast">Server disconnected</string>
+    <string name="jellyfin_error_fields">Enter the address, username and password</string>
+    <string name="jellyfin_error_connect">Could not sign in. Check the address and credentials — and that the phone can reach the server.</string>
+    <string name="episode_no_source">No source for this episode — add it to a library folder or your server</string>
+</resources>

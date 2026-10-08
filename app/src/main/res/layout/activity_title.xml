@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Title detail (PRD §6.2). One RecyclerView rather than a NestedScrollView so a 26-episode
+  list recycles; Back and Share float over the backdrop.
+-->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/night900"
+    tools:context=".ui.title.TitleActivity">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:overScrollMode="never"
+        android:paddingBottom="24dp"
+        android:scrollbars="none" />
+
+    <FrameLayout
+        android:id="@+id/actions"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="@dimen/title_actions_inset"
+        android:paddingTop="@dimen/title_actions_top"
+        android:paddingEnd="@dimen/title_actions_inset">
+
+        <ImageView
+            android:id="@+id/btnBack"
+            style="@style/Widget.Mh.RoundButton"
+            android:layout_gravity="start"
+            android:contentDescription="@string/cd_back"
+            android:src="@drawable/ic_arrow_back" />
+
+        <ImageView
+            android:id="@+id/btnShare"
+            style="@style/Widget.Mh.RoundButton"
+            android:layout_gravity="end"
+            android:contentDescription="@string/cd_share"
+            android:padding="10dp"
+            android:src="@drawable/ic_share" />
+    </FrameLayout>
+</FrameLayout>

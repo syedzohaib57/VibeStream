@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Selected chip (PRD §5): white fill, #050505 text. -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="rectangle">
+    <corners android:radius="@dimen/radius_chip" />
+    <solid android:color="@color/chip_selected_bg" />
+</shape>

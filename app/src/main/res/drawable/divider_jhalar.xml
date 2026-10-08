@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Jhalar — the ember hairline that fades at both ends (Shared.jsx Jhalar):
+  linear-gradient(90deg, transparent, rgba(255,138,43,.55), transparent)
+-->
+<vector
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="100dp"
+    android:height="1dp"
+    android:viewportWidth="100"
+    android:viewportHeight="1">
+    <path android:pathData="M0,0h100v1h-100z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:endX="100"
+                android:endY="0"
+                android:startX="0"
+                android:startY="0"
+                android:type="linear">
+                <item
+                    android:color="@color/transparent"
+                    android:offset="0" />
+                <item
+                    android:color="#8CFF8A2B"
+                    android:offset="0.5" />
+                <item
+                    android:color="@color/transparent"
+                    android:offset="1" />
+            </gradient>
+        </aapt:attr>
+    </path>
+</vector>

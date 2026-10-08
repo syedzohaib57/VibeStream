@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Poster label scrim — Shared.jsx Poster: the bottom 64% of an art-less poster,
+  linear-gradient(180deg, transparent, rgba(12,10,17,.88)).
+  Applied to a view sized to 64% of the poster height.
+-->
+<vector
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="100dp"
+    android:height="100dp"
+    android:viewportWidth="100"
+    android:viewportHeight="100">
+    <path android:pathData="M0,0h100v100h-100z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:endX="0"
+                android:endY="100"
+                android:startX="0"
+                android:startY="0"
+                android:type="linear">
+                <item
+                    android:color="@color/transparent"
+                    android:offset="0" />
+                <item
+                    android:color="@color/poster_label_scrim_end"
+                    android:offset="1" />
+            </gradient>
+        </aapt:attr>
+    </path>
+</vector>

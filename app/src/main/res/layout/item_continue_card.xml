@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  A Continue-watching card (PRD §6.1): 176dp wide on night700 with an 8dp radius, a 16:9
+  poster with a 40dp round play glyph, a 3dp ember progress bar, then the title and
+  "E{n} · {m} min left".
+
+  clipToOutline so the poster's top corners follow the card's, matching the design's
+  `overflow: hidden`.
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="@dimen/continue_card_width"
+    android:layout_height="wrap_content"
+    android:layout_marginEnd="@dimen/gap_poster"
+    android:background="@drawable/bg_r8"
+    android:backgroundTint="@color/night700"
+    android:clipToOutline="true"
+    android:orientation="vertical">
+
+    <com.example.streamingappzb.ui.widget.PosterView
+        android:id="@+id/poster"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/continue_poster_height"
+        app:mhCornerRadius="0dp"
+        app:mhShowLabel="false">
+
+        <FrameLayout
+            android:layout_width="@dimen/continue_play_glyph"
+            android:layout_height="@dimen/continue_play_glyph"
+            android:layout_gravity="center"
+            android:background="@drawable/bg_play_glyph"
+            android:importantForAccessibility="no">
+
+            <ImageView
+                android:layout_width="@dimen/icon"
+                android:layout_height="@dimen/icon"
+                android:layout_gravity="center"
+                android:importantForAccessibility="no"
+                android:src="@drawable/ic_play_arrow_fill"
+                app:tint="@color/text_hi" />
+        </FrameLayout>
+    </com.example.streamingappzb.ui.widget.PosterView>
+
+    <!-- ember = progress (PRD §2.1) -->
+    <ProgressBar
+        android:id="@+id/progress"
+        style="@style/Widget.Mh.ProgressBar.Ember"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/continue_progress_height"
+        tools:progress="40" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="10dp"
+        android:paddingTop="8dp"
+        android:paddingEnd="8dp"
+        android:paddingBottom="9dp">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:textAppearance="@style/TextAppearance.Mh.Caption.Semibold"
+                android:textColor="@color/text_hi"
+                tools:text="Moonlit Night" />
+
+            <TextView
+                android:id="@+id/meta"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:textAppearance="@style/TextAppearance.Mh.Num.Caption"
+                tools:text="E4 · 20 min left" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/btnInfo"
+            android:layout_width="@dimen/touch_min"
+            android:layout_height="@dimen/touch_min"
+            android:layout_marginEnd="-6dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="@string/cd_more_info"
+            android:padding="12dp"
+            android:src="@drawable/ic_info"
+            app:tint="@color/text_mid" />
+    </LinearLayout>
+</LinearLayout>

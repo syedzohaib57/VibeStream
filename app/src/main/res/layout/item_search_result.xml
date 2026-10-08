@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- A search result (PRD §6.4): a 56x84 poster, the title, and "kind · year · genre". -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?attr/selectableItemBackground"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:paddingStart="@dimen/gutter"
+    android:paddingTop="8dp"
+    android:paddingEnd="@dimen/gutter"
+    android:paddingBottom="8dp">
+
+    <com.example.streamingappzb.ui.widget.PosterView
+        android:id="@+id/poster"
+        android:layout_width="@dimen/search_result_poster_width"
+        android:layout_height="@dimen/search_result_poster_height"
+        app:mhCornerRadius="@dimen/radius_poster_row"
+        app:mhShowLabel="false" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:textAppearance="@style/TextAppearance.Mh.BodyL"
+            tools:text="Moonlit Night" />
+
+        <TextView
+            android:id="@+id/meta"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:textAppearance="@style/TextAppearance.Mh.Num.Caption"
+            tools:text="Drama · 2022 · Romance · Family" />
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="@dimen/icon"
+        android:layout_height="@dimen/icon"
+        android:importantForAccessibility="no"
+        android:src="@drawable/ic_chevron_right"
+        app:tint="@color/text_low" />
+</LinearLayout>

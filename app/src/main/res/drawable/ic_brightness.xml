@@ -1,0 +1,13 @@
+<!-- Brightness: a disc with four rays. Shown in the player's level HUD. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="960"
+    android:viewportHeight="960">
+    <path
+        android:fillColor="@android:color/white"
+        android:pathData="M480,340a140,140 0 1,0 0,280a140,140 0 1,0 0,-280z" />
+    <path
+        android:fillColor="@android:color/white"
+        android:pathData="M450,110h60v120h-60z M450,730h60v120h-60z M110,450h120v60h-120z M730,450h120v60h-120z" />
+</vector>

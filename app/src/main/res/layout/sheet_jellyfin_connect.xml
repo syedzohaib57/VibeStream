@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Connecting a Jellyfin server: address, username, password, one button.
+
+  Fields follow the search screen's input treatment (bg_search_field, BodyL, text_low
+  hints) rather than Material text-input boxes, so the sheet reads as this app and not
+  as a stock form.
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingStart="@dimen/sheet_padding_h"
+    android:paddingTop="10dp"
+    android:paddingEnd="@dimen/sheet_padding_h"
+    android:paddingBottom="26dp">
+
+    <View
+        android:layout_width="@dimen/sheet_handle_width"
+        android:layout_height="@dimen/sheet_handle_height"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="14dp"
+        android:background="@drawable/bg_pill"
+        android:backgroundTint="@color/night500"
+        android:importantForAccessibility="no" />
+
+    <TextView
+        android:id="@+id/sheetTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="4dp"
+        android:text="@string/jellyfin_sheet_title"
+        android:textAppearance="@style/TextAppearance.Mh.Section" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="14dp"
+        android:text="@string/jellyfin_sheet_sub"
+        android:textAppearance="@style/TextAppearance.Mh.Caption"
+        android:textColor="@color/text_low" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/search_field_height"
+        android:background="@drawable/bg_search_field"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="14dp"
+        android:paddingEnd="14dp">
+
+        <EditText
+            android:id="@+id/serverUrl"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@null"
+            android:hint="@string/jellyfin_hint_url"
+            android:importantForAutofill="no"
+            android:inputType="textUri"
+            android:maxLines="1"
+            android:textAppearance="@style/TextAppearance.Mh.BodyL"
+            android:textColor="@color/text_hi"
+            android:textColorHint="@color/text_low" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/search_field_height"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/bg_search_field"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="14dp"
+        android:paddingEnd="14dp">
+
+        <EditText
+            android:id="@+id/userName"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@null"
+            android:hint="@string/jellyfin_hint_user"
+            android:importantForAutofill="no"
+            android:inputType="text"
+            android:maxLines="1"
+            android:textAppearance="@style/TextAppearance.Mh.BodyL"
+            android:textColor="@color/text_hi"
+            android:textColorHint="@color/text_low" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/search_field_height"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/bg_search_field"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="14dp"
+        android:paddingEnd="14dp">
+
+        <EditText
+            android:id="@+id/password"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@null"
+            android:hint="@string/jellyfin_hint_password"
+            android:importantForAutofill="no"
+            android:inputType="textPassword"
+            android:maxLines="1"
+            android:textAppearance="@style/TextAppearance.Mh.BodyL"
+            android:textColor="@color/text_hi"
+            android:textColorHint="@color/text_low" />
+    </LinearLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnConnect"
+        style="@style/Widget.Mh.Pill.Ember"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/button_primary_height"
+        android:layout_marginTop="16dp"
+        android:text="@string/jellyfin_connect"
+        app:icon="@drawable/ic_cast"
+        app:iconGravity="textStart"
+        tools:text="Connect" />
+
+    <TextView
+        android:id="@+id/connectError"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="10dp"
+        android:textAppearance="@style/TextAppearance.Mh.Caption"
+        android:textColor="@color/text_low"
+        android:visibility="gone"
+        tools:text="Could not reach the server"
+        tools:visibility="visible" />
+</LinearLayout>

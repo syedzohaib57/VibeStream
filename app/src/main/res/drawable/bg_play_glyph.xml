@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Continue-watching play glyph: 55% black with a 1.5dp white ring. -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="oval">
+    <solid android:color="@color/play_glyph_bg" />
+    <stroke android:width="@dimen/continue_play_ring" android:color="@color/play_glyph_ring" />
+</shape>

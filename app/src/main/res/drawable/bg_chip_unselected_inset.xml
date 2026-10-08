@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  The chip the viewer sees is the design's 32dp pill; the view around it is 44dp so the
+  target meets the minimum (acceptance item 14). The inset is what keeps those two
+  independent — the extra height is tappable but never painted.
+-->
+<inset xmlns:android="http://schemas.android.com/apk/res/android"
+    android:drawable="@drawable/bg_chip_unselected"
+    android:insetBottom="@dimen/chip_touch_inset_v"
+    android:insetTop="@dimen/chip_touch_inset_v" />

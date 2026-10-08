@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  One streaming service in the where-to-watch list.
+
+  The logo sits on a light chip because TMDB supplies provider logos designed for light
+  backgrounds, and recolouring a brand mark to fit a dark theme is both ugly and not ours
+  to do.
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginEnd="@dimen/gap_button_tight"
+    android:background="?attr/selectableItemBackground"
+    android:gravity="center_vertical"
+    android:minHeight="@dimen/touch_min"
+    android:orientation="horizontal"
+    android:paddingEnd="10dp">
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="@dimen/provider_logo"
+        android:layout_height="@dimen/provider_logo"
+        android:background="@drawable/bg_provider_chip"
+        android:importantForAccessibility="no"
+        android:padding="1dp"
+        android:scaleType="centerCrop"
+        tools:src="@drawable/ic_play_circle_fill" />
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:maxWidth="160dp"
+        android:textAppearance="@style/TextAppearance.Mh.Body.Semibold"
+        tools:text="Netflix" />
+</LinearLayout>

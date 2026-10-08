@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Horizontal ProgressBar: ember fill on an 18%-white track (ember = progress). -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@android:id/background">
+        <shape android:shape="rectangle">
+            <corners android:radius="@dimen/radius_pill" />
+            <solid android:color="@color/track_on_dark" />
+        </shape>
+    </item>
+    <item android:id="@android:id/progress">
+        <clip>
+            <shape android:shape="rectangle">
+                <corners android:radius="@dimen/radius_pill" />
+                <solid android:color="@color/ember500" />
+            </shape>
+        </clip>
+    </item>
+</layer-list>

@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Discover — the Home tab over real catalogue data.
+
+  Same shape as the original Home: a full-bleed list with the app bar and chips floating
+  over the hero. What changed is the source, not the layout, so the design carries over
+  unaltered.
+
+  Pull-to-refresh is new and belongs here rather than on the old screen: the catalogue is
+  now live data with a six-hour cache, so "get me today's list" is a thing a viewer can
+  reasonably want.
+-->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/night900">
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/refresh"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rows"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:overScrollMode="never"
+            android:scrollbars="none"
+            tools:itemCount="3"
+            tools:listitem="@layout/item_media_row" />
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+    <ProgressBar
+        android:id="@+id/loading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:indeterminateTint="@color/ember500"
+        android:visibility="gone"
+        tools:visibility="visible" />
+
+    <!--
+      Missing-key state.
+
+      Deliberately explicit rather than a generic "couldn't load": without a TMDB key the
+      app cannot work at all, and the fix is one line in local.properties. Telling someone
+      to check their connection instead would send them debugging the wrong thing.
+    -->
+    <LinearLayout
+        android:id="@+id/setupNotice"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/night900"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingStart="@dimen/gutter"
+        android:paddingEnd="@dimen/gutter"
+        android:visibility="gone"
+        tools:visibility="visible">
+
+        <ImageView
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:importantForAccessibility="no"
+            android:src="@drawable/ic_info"
+            app:tint="@color/ember500" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:gravity="center"
+            android:text="@string/setup_needs_key_title"
+            android:textAppearance="@style/TextAppearance.Mh.Section" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:gravity="center"
+            android:text="@string/setup_needs_key_body"
+            android:textAppearance="@style/TextAppearance.Mh.Body"
+            android:textColor="@color/text_mid" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/appBarContent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/appbar_height"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingStart="@dimen/gutter_appbar"
+            android:paddingEnd="8dp">
+
+            <TextView
+                android:id="@+id/wordmark"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/wordmark"
+                android:textAppearance="@style/TextAppearance.Mh.Wordmark" />
+
+            <com.example.streamingappzb.ui.widget.DataPillView
+                android:id="@+id/dataPill"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/touch_min"
+                android:layout_marginEnd="4dp" />
+
+            <ImageView
+                android:id="@+id/btnSearch"
+                style="@style/Widget.Mh.IconButton"
+                android:contentDescription="@string/cd_search"
+                android:src="@drawable/ic_search" />
+        </LinearLayout>
+
+        <HorizontalScrollView
+            android:id="@+id/chipsScroll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clipToPadding="false"
+            android:paddingStart="@dimen/gutter_appbar"
+            android:paddingTop="2dp"
+            android:paddingEnd="@dimen/gutter_appbar"
+            android:paddingBottom="12dp"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:id="@+id/chips"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" />
+        </HorizontalScrollView>
+    </LinearLayout>
+
+    <!-- Cache is being shown because the refresh failed. Informs, never blocks. -->
+    <LinearLayout
+        android:id="@+id/offlineBanner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="@color/night800"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="@dimen/gutter"
+        android:paddingTop="10dp"
+        android:paddingEnd="@dimen/gutter"
+        android:paddingBottom="10dp"
+        android:visibility="gone"
+        tools:visibility="visible">
+
+        <ImageView
+            android:layout_width="@dimen/icon"
+            android:layout_height="@dimen/icon"
+            android:importantForAccessibility="no"
+            android:src="@drawable/ic_wifi_off"
+            app:tint="@color/cyan400" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_weight="1"
+            android:text="@string/offline_showing_cached"
+            android:textAppearance="@style/TextAppearance.Mh.Caption" />
+    </LinearLayout>
+</FrameLayout>

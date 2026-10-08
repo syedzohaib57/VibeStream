@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Home (PRD §6.1 / HomeScreen.jsx).
+
+  The app bar and the category chips float *over* the banner rather than sitting above it,
+  which is why the RecyclerView is full-bleed and starts under the status bar. The hero's
+  copy sits at its bottom, so nothing is obscured.
+-->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/night900">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rows"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:overScrollMode="never"
+        android:scrollbars="none"
+        tools:itemCount="3"
+        tools:listitem="@layout/item_home_row" />
+
+    <!--
+      Floating brand bar.
+
+      The gradient-to-solid transition after 420dp of scroll is a TransitionDrawable on
+      this view's own background, set up in HomeFragment. It deliberately is *not* two
+      stacked match_parent Views inside a wrap_content FrameLayout: that measures the bar
+      to the full screen, and its 72%-black gradient then dims the entire list behind it.
+    -->
+        <LinearLayout
+            android:id="@+id/appBarContent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/appbar_height"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingStart="@dimen/gutter_appbar"
+                android:paddingEnd="8dp">
+
+                <TextView
+                    android:id="@+id/wordmark"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/wordmark"
+                    android:textAppearance="@style/TextAppearance.Mh.Wordmark" />
+
+                <!-- Always visible, always current: the PRD's central decision. -->
+                <com.example.streamingappzb.ui.widget.DataPillView
+                    android:id="@+id/dataPill"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/touch_min"
+                    android:layout_marginEnd="4dp" />
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/btnDownloads"
+                        style="@style/Widget.Mh.IconButton"
+                        android:contentDescription="@string/cd_downloads"
+                        android:src="@drawable/ic_download" />
+
+                    <!-- Cyan 8dp dot while any download is active (PRD §6.1). -->
+                    <View
+                        android:id="@+id/downloadDot"
+                        android:layout_width="@dimen/dl_dot"
+                        android:layout_height="@dimen/dl_dot"
+                        android:layout_gravity="top|end"
+                        android:layout_marginTop="7dp"
+                        android:layout_marginEnd="6dp"
+                        android:background="@drawable/bg_circle"
+                        android:backgroundTint="@color/cyan400"
+                        android:importantForAccessibility="no"
+                        android:visibility="gone"
+                        tools:visibility="visible" />
+                </FrameLayout>
+
+                <ImageView
+                    android:id="@+id/btnSearch"
+                    style="@style/Widget.Mh.IconButton"
+                    android:contentDescription="@string/cd_search"
+                    android:src="@drawable/ic_search" />
+            </LinearLayout>
+
+            <HorizontalScrollView
+                android:id="@+id/chipsScroll"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clipToPadding="false"
+                android:paddingStart="@dimen/gutter_appbar"
+                android:paddingTop="2dp"
+                android:paddingEnd="@dimen/gutter_appbar"
+                android:paddingBottom="12dp"
+                android:scrollbars="none">
+
+                <LinearLayout
+                    android:id="@+id/chips"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" />
+            </HorizontalScrollView>
+        </LinearLayout>
+
+    <!-- Offline notice. Downloads still play, so this informs rather than blocks. -->
+    <LinearLayout
+        android:id="@+id/offlineBanner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="@color/night800"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="@dimen/gutter"
+        android:paddingTop="10dp"
+        android:paddingEnd="@dimen/gutter"
+        android:paddingBottom="10dp"
+        android:visibility="gone"
+        tools:visibility="visible">
+
+        <ImageView
+            android:layout_width="@dimen/icon"
+            android:layout_height="@dimen/icon"
+            android:importantForAccessibility="no"
+            android:src="@drawable/ic_wifi_off"
+            app:tint="@color/cyan400" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_weight="1"
+            android:text="@string/error_offline_body"
+            android:textAppearance="@style/TextAppearance.Mh.Caption" />
+    </LinearLayout>
+</FrameLayout>

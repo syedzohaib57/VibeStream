@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- My List grid (PRD §6.6) -->
+    <integer name="mylist_columns">3</integer>
+    <!-- Genre browse tiles (PRD §6.4) -->
+    <integer name="genre_columns">2</integer>
+
+    <!-- Durations, PRD §2.3 -->
+    <integer name="dur_appbar_fill">220</integer>
+
+</resources>

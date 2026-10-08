@@ -1,0 +1,16 @@
+<!-- Volume: a speaker cone and one wave. Shown in the player's level HUD. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="960"
+    android:viewportHeight="960">
+    <path
+        android:fillColor="@android:color/white"
+        android:pathData="M180,380h130l180,-160v520l-180,-160h-130z" />
+    <path
+        android:fillColor="@android:color/transparent"
+        android:pathData="M620,340a210,210 0 0,1 0,280"
+        android:strokeColor="@android:color/white"
+        android:strokeLineCap="round"
+        android:strokeWidth="64" />
+</vector>

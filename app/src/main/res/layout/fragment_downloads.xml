@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Downloads (PRD §6.5): a storage bar, the two settings, then In progress and
+  Ready to watch offline. Wi-Fi only is on by default; Smart downloads is off.
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/night900"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="bottom"
+        android:minHeight="@dimen/screen_header_height"
+        android:orientation="horizontal"
+        android:paddingStart="@dimen/gutter_appbar"
+        android:paddingEnd="@dimen/gutter_appbar"
+        android:paddingBottom="10dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/nav_downloads"
+            android:textAppearance="@style/TextAppearance.Mh.ScreenTitle" />
+    </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <!-- Plays once when a download finishes while this screen is open. -->
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/completedAnimation"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_gravity="center"
+            android:elevation="8dp"
+            android:importantForAccessibility="no"
+            android:visibility="gone"
+            app:lottie_autoPlay="false"
+            app:lottie_loop="false"
+            app:lottie_rawRes="@raw/mh_download_done"
+            tools:visibility="visible" />
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scroller"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:overScrollMode="never"
+        android:paddingBottom="20dp"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Storage: this app's share is cyan, the rest is neutral. -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/gutter"
+                android:layout_marginEnd="@dimen/gutter"
+                android:layout_marginBottom="12dp"
+                android:background="@drawable/bg_r12"
+                android:backgroundTint="@color/night700"
+                android:orientation="vertical"
+                android:padding="@dimen/storage_card_padding">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/storageUsed"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textAppearance="@style/TextAppearance.Mh.Num.Caption"
+                        android:textColor="@color/cyan400"
+                        tools:text="MovieHub 532 MB" />
+
+                    <TextView
+                        android:id="@+id/storageFree"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="@style/TextAppearance.Mh.Num.Caption"
+                        tools:text="24 GB free" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/storage_bar_height"
+                    android:background="@drawable/bg_pill"
+                    android:backgroundTint="@color/storage_free"
+                    android:clipToOutline="true"
+                    android:orientation="horizontal">
+
+                    <View
+                        android:id="@+id/storageApp"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@color/cyan500" />
+
+                    <View
+                        android:id="@+id/storageOther"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="30"
+                        android:background="@color/storage_other" />
+
+                    <View
+                        android:id="@+id/storageRemaining"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="60" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <com.example.streamingappzb.ui.widget.MhSheetRow
+                android:id="@+id/rowWifiOnly"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <com.example.streamingappzb.ui.widget.MhSheetRow
+                android:id="@+id/rowSmart"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginStart="@dimen/gutter"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="@dimen/gutter"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/divider_jhalar"
+                android:importantForAccessibility="no" />
+
+            <LinearLayout
+                android:id="@+id/emptyState"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                android:paddingStart="30dp"
+                android:paddingTop="20dp"
+                android:paddingEnd="30dp"
+                android:visibility="gone"
+                tools:visibility="visible">
+
+                <com.airbnb.lottie.LottieAnimationView
+                    android:layout_width="@dimen/lottie_empty"
+                    android:layout_height="@dimen/lottie_empty"
+                    app:lottie_autoPlay="true"
+                    app:lottie_loop="true"
+                    app:lottie_rawRes="@raw/mh_empty_downloads" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center"
+                    android:text="@string/downloads_empty_title"
+                    android:textAppearance="@style/TextAppearance.Mh.BodyL" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:gravity="center"
+                    android:text="@string/downloads_empty_body"
+                    android:textAppearance="@style/TextAppearance.Mh.Body"
+                    android:textColor="@color/text_mid" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnFindSomething"
+                    style="@style/Widget.Mh.Pill.Ember"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/touch_min"
+                    android:layout_marginTop="16dp"
+                    android:text="@string/downloads_empty_action" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/sectionInProgress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="@dimen/gutter"
+                android:paddingTop="4dp"
+                android:paddingEnd="@dimen/gutter"
+                android:paddingBottom="4dp"
+                android:text="@string/downloads_in_progress"
+                android:textAppearance="@style/TextAppearance.Mh.Caption.Semibold"
+                android:visibility="gone"
+                tools:visibility="visible" />
+
+            <LinearLayout
+                android:id="@+id/inProgressRows"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" />
+
+            <TextView
+                android:id="@+id/sectionReady"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="@dimen/gutter"
+                android:paddingTop="14dp"
+                android:paddingEnd="@dimen/gutter"
+                android:paddingBottom="4dp"
+                android:text="@string/downloads_ready"
+                android:textAppearance="@style/TextAppearance.Mh.Caption.Semibold"
+                android:visibility="gone"
+                tools:visibility="visible" />
+
+            <LinearLayout
+                android:id="@+id/readyRows"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" />
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+    </FrameLayout>
+</LinearLayout>

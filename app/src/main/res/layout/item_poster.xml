@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  One poster in a row: 120x180dp, 6dp radius, 8dp apart (PRD §6.1).
+
+  The NEW EPISODE strip is a child of PosterView so it is clipped by the rounded corners,
+  and it carries the words rather than relying on the rose fill alone (PRD §8).
+-->
+<com.example.streamingappzb.ui.widget.PosterView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="@dimen/poster_row_width"
+    android:layout_height="@dimen/poster_row_height"
+    android:layout_marginEnd="@dimen/gap_poster"
+    android:background="?attr/selectableItemBackground"
+    app:mhCornerRadius="@dimen/radius_poster_row"
+    app:mhShowLabel="true">
+
+    <TextView
+        android:id="@+id/newStrip"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="@color/rose500"
+        android:gravity="center"
+        android:paddingTop="@dimen/new_strip_padding_v"
+        android:paddingBottom="@dimen/new_strip_padding_v"
+        android:text="@string/new_episode_strip"
+        android:textAppearance="@style/TextAppearance.Mh.Micro"
+        android:textColor="@color/text_hi"
+        android:visibility="gone"
+        tools:visibility="visible" />
+</com.example.streamingappzb.ui.widget.PosterView>

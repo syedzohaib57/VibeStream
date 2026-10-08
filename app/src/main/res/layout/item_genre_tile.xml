@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- A genre browse tile (PRD §6.4), drawn from the genre's own colour and motif. -->
+<com.example.streamingappzb.ui.widget.PosterView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/genre_tile_height"
+    android:background="?attr/selectableItemBackground"
+    app:mhCornerRadius="@dimen/radius_tile"
+    app:mhPosterStyle="tile"
+    app:mhShowLabel="false">
+
+    <TextView
+        android:id="@+id/genreName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        android:paddingBottom="10dp"
+        android:textAppearance="@style/TextAppearance.Mh.BodyL"
+        android:textColor="@color/text_hi"
+        tools:text="Drama" />
+</com.example.streamingappzb.ui.widget.PosterView>

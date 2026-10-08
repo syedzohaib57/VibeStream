@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  A sheet row (PRD §5 `SheetRow`): optional leading glyph, a label with an optional
+  sub-line, and a trailing slot for a toggle, a radio, a size or a lock.
+-->
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:parentTag="android.widget.LinearLayout">
+
+    <ImageView
+        android:id="@+id/icon"
+        android:layout_width="@dimen/icon"
+        android:layout_height="@dimen/icon"
+        android:importantForAccessibility="no"
+        android:visibility="gone"
+        app:tint="@color/text_mid"
+        tools:src="@drawable/ic_wifi"
+        tools:visibility="visible" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="14dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/label"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/TextAppearance.Mh.SheetLabel"
+            tools:text="Data Saver" />
+
+        <TextView
+            android:id="@+id/sub"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/TextAppearance.Mh.Caption"
+            android:visibility="gone"
+            tools:text="Caps mobile-data streams at 360p"
+            tools:visibility="visible" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/trailingText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:textAppearance="@style/TextAppearance.Mh.Num.Meta"
+        android:visibility="gone"
+        tools:text="155 MB"
+        tools:visibility="visible" />
+
+    <FrameLayout
+        android:id="@+id/trailingSlot"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp" />
+</merge>

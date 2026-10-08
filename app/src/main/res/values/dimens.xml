@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Every measurement comes from PRD §2.3 or the ui_kits/MovieHub screens. -->
+<resources>
+
+    <!-- ===== Spacing (PRD §2.3) ===== -->
+    <dimen name="gutter">16dp</dimen>
+    <dimen name="gutter_appbar">18dp</dimen>
+    <dimen name="gutter_hero">20dp</dimen>
+    <dimen name="gutter_title">18dp</dimen>
+    <dimen name="gap_poster">8dp</dimen>
+    <dimen name="gap_row">22dp</dimen>
+    <dimen name="gap_button">10dp</dimen>
+    <dimen name="gap_button_tight">8dp</dimen>
+
+    <!-- ===== Touch targets (PRD §2.3 — 44dp minimum) ===== -->
+    <dimen name="touch_min">44dp</dimen>
+    <dimen name="icon_button">40dp</dimen>
+    <dimen name="icon_button_lg">44dp</dimen>
+    <dimen name="icon_sm">15dp</dimen>
+    <dimen name="icon_md">20dp</dimen>
+    <dimen name="icon">22dp</dimen>
+    <dimen name="icon_lg">24dp</dimen>
+    <dimen name="icon_xl">30dp</dimen>
+    <dimen name="icon_xxl">34dp</dimen>
+
+    <!-- ===== Radii (PRD §2.3) ===== -->
+    <dimen name="radius_poster_row">6dp</dimen>
+    <dimen name="radius_poster_grid">10dp</dimen>
+    <dimen name="radius_button_home">8dp</dimen>
+    <dimen name="radius_tile">12dp</dimen>
+    <dimen name="radius_sheet">22dp</dimen>
+    <dimen name="radius_pill">999dp</dimen>
+    <dimen name="radius_badge">3dp</dimen>
+    <dimen name="radius_badge_sm">4dp</dimen>
+    <dimen name="radius_chip">99dp</dimen>
+
+    <!-- ===== App bar ===== -->
+    <dimen name="appbar_height">50dp</dimen>
+    <dimen name="appbar_scroll_solid_at">420dp</dimen>
+    <dimen name="data_pill_height">28dp</dimen>
+    <dimen name="data_pill_padding_h">10dp</dimen>
+    <dimen name="dl_dot">8dp</dimen>
+
+    <!-- ===== Chips ===== -->
+    <!--
+      The design's chip is 32dp. The view is 44dp so the touch target clears the minimum,
+      with the difference inset out of the background — the chips row already reserves
+      46dp, so nothing moves.
+    -->
+    <dimen name="chip_height">32dp</dimen>
+    <dimen name="chip_touch_height">@dimen/touch_min</dimen>
+    <dimen name="chip_touch_inset_v">6dp</dimen>
+    <dimen name="chip_padding_h">14dp</dimen>
+    <dimen name="chip_stroke">1dp</dimen>
+
+    <!-- ===== Hero ===== -->
+    <dimen name="hero_height">580dp</dimen>
+    <dimen name="hero_copy_bottom">22dp</dimen>
+    <dimen name="hero_title_max_width">320dp</dimen>
+    <dimen name="hero_copy_gap">6dp</dimen>
+    <dimen name="hero_eyebrow_bar_w">14dp</dimen>
+    <dimen name="hero_eyebrow_bar_h">2dp</dimen>
+    <dimen name="hero_button_height">44dp</dimen>
+    <dimen name="hero_rosette">320dp</dimen>
+
+    <!-- ===== Continue watching ===== -->
+    <dimen name="continue_card_width">176dp</dimen>
+    <dimen name="continue_poster_height">99dp</dimen>
+    <dimen name="continue_progress_height">3dp</dimen>
+    <dimen name="continue_play_glyph">40dp</dimen>
+    <dimen name="continue_play_ring">1.5dp</dimen>
+
+    <!-- ===== Poster rows ===== -->
+    <dimen name="poster_row_width">120dp</dimen>
+    <dimen name="poster_row_height">180dp</dimen>
+    <dimen name="row_header_height">38dp</dimen>
+    <dimen name="row_header_padding_end">12dp</dimen>
+    <dimen name="new_dot">7dp</dimen>
+    <dimen name="new_strip_padding_v">4dp</dimen>
+
+    <!-- Ranked (Top 10) rows. The overlap is negative on purpose: the poster sits over
+         the numeral's right edge, which is what makes the glyph read as a cut-out. -->
+    <dimen name="rank_numeral_stroke_width">2dp</dimen>
+    <dimen name="rank_poster_overlap">-46dp</dimen>
+    <!-- How much of the glyph has to stay clear of the poster. Without a floor, the fixed
+         overlap above swallows a narrow "1" almost entirely while leaving a "2" readable. -->
+    <dimen name="rank_numeral_min_visible">30dp</dimen>
+    <dimen name="rank_row_gutter_end">26dp</dimen>
+
+    <!-- ===== Title detail ===== -->
+    <dimen name="title_backdrop_height">300dp</dimen>
+
+    <!-- Real-catalogue screens. -->
+    <dimen name="provider_logo">40dp</dimen>
+    <dimen name="button_primary_height">48dp</dimen>
+    <dimen name="title_actions_top">38dp</dimen>
+    <dimen name="title_actions_inset">12dp</dimen>
+    <dimen name="title_overlap">-34dp</dimen>
+    <dimen name="title_primary_height">48dp</dimen>
+    <dimen name="title_rosette">240dp</dimen>
+    <dimen name="episode_thumb_width">120dp</dimen>
+    <dimen name="episode_thumb_height">68dp</dimen>
+    <dimen name="episode_progress_height">3dp</dimen>
+    <dimen name="download_glyph">26dp</dimen>
+
+    <!-- ===== Player ===== -->
+    <dimen name="player_header_height">88dp</dimen>
+    <dimen name="player_frame_top">40dp</dimen>
+    <dimen name="player_controls_padding_h">18dp</dimen>
+    <dimen name="player_controls_padding_b">22dp</dimen>
+    <!-- Top padding exists now that the bottom bar floats over the picture: without it
+         the seek rail's thumb halo is clipped by the scrim's upper edge. -->
+    <dimen name="player_controls_padding_t">10dp</dimen>
+    <dimen name="player_hud_bar_width">120dp</dimen>
+    <dimen name="player_skip_hud_margin">24dp</dimen>
+    <!-- Clear of the bottom control bar, so Skip ad and Up next never sit under it. -->
+    <dimen name="player_overlay_bottom">150dp</dimen>
+    <dimen name="seek_touch_height">28dp</dimen>
+    <dimen name="seek_track_height">4dp</dimen>
+    <dimen name="seek_thumb">14dp</dimen>
+    <dimen name="seek_thumb_halo">4dp</dimen>
+    <dimen name="ad_tick_width">3dp</dimen>
+    <dimen name="ad_tick_height">8dp</dimen>
+    <dimen name="ad_progress_height">3dp</dimen>
+    <dimen name="transport_gap">22dp</dimen>
+    <dimen name="play_button">64dp</dimen>
+    <dimen name="player_chip_height">36dp</dimen>
+    <dimen name="player_chip_padding_h">12dp</dimen>
+    <dimen name="upnext_card_width">200dp</dimen>
+    <dimen name="upnext_ring">34dp</dimen>
+    <dimen name="upnext_ring_stroke">3dp</dimen>
+    <dimen name="skip_button_height">34dp</dimen>
+
+    <!-- ===== Search ===== -->
+    <dimen name="screen_header_height">88dp</dimen>
+    <dimen name="search_field_height">46dp</dimen>
+    <dimen name="search_result_poster_width">56dp</dimen>
+    <dimen name="search_result_poster_height">84dp</dimen>
+    <dimen name="genre_tile_height">82dp</dimen>
+
+    <!-- ===== Downloads ===== -->
+    <dimen name="download_thumb_width">104dp</dimen>
+    <dimen name="download_thumb_height">58dp</dimen>
+    <dimen name="storage_card_padding">14dp</dimen>
+    <dimen name="storage_bar_height">6dp</dimen>
+    <dimen name="download_progress_height">4dp</dimen>
+
+    <!-- ===== My List ===== -->
+    <dimen name="mylist_poster_height">170dp</dimen>
+    <dimen name="mylist_gap">10dp</dimen>
+
+    <!-- ===== Bottom nav ===== -->
+    <dimen name="bottom_nav_height">66dp</dimen>
+    <dimen name="bottom_nav_border">1dp</dimen>
+    <dimen name="bottom_nav_badge_min">16dp</dimen>
+
+    <!-- ===== Sheets ===== -->
+    <dimen name="sheet_handle_width">40dp</dimen>
+    <dimen name="sheet_handle_height">4dp</dimen>
+    <dimen name="sheet_row_min_height">54dp</dimen>
+    <dimen name="sheet_padding_h">20dp</dimen>
+
+    <!-- ===== Toggles / radios ===== -->
+    <dimen name="toggle_width">44dp</dimen>
+    <dimen name="toggle_height">26dp</dimen>
+    <dimen name="toggle_knob">20dp</dimen>
+    <dimen name="toggle_inset">3dp</dimen>
+    <dimen name="radio_size">22dp</dimen>
+    <dimen name="radio_stroke">2dp</dimen>
+    <dimen name="radio_dot">10dp</dimen>
+
+    <!-- ===== Toast ===== -->
+    <dimen name="toast_max_width">340dp</dimen>
+    <dimen name="toast_padding_h">16dp</dimen>
+    <dimen name="toast_padding_v">10dp</dimen>
+    <dimen name="toast_bottom_tab">84dp</dimen>
+
+    <!-- ===== Person ===== -->
+    <!-- Square rather than 2:3: TMDB profile photos are cropped inconsistently, and a
+         square cell makes a head-and-shoulders and a full-length shot sit together. -->
+    <dimen name="person_photo">104dp</dimen>
+
+    <!-- ===== Misc ===== -->
+    <dimen name="hairline">1dp</dimen>
+    <dimen name="lottie_empty">140dp</dimen>
+</resources>

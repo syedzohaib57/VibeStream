@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Discover hero. 580dp, full-bleed, a still image only — never autoplays.
+
+  The primary button says "Where to watch" rather than "Play", because for a licensed
+  title that is honestly what it does. Pretending otherwise and then showing a provider
+  list is the kind of bait every pirate app pulls, and it is the one thing this product
+  must not do.
+-->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/hero_height">
+
+    <com.example.streamingappzb.ui.widget.PosterView
+        android:id="@+id/heroPoster"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:mhCornerRadius="0dp"
+        app:mhPosterStyle="hero"
+        app:mhShowLabel="false" />
+
+    <com.example.streamingappzb.ui.widget.RosetteView
+        android:id="@+id/heroRosette"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:importantForAccessibility="no"
+        app:mhHaloSize="@dimen/hero_rosette" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/scrim_hero_v"
+        android:importantForAccessibility="no" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/scrim_hero_h"
+        android:importantForAccessibility="no" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_marginBottom="@dimen/hero_copy_bottom"
+        android:orientation="vertical"
+        android:paddingStart="@dimen/gutter_hero"
+        android:paddingEnd="@dimen/gutter_hero">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <View
+                android:layout_width="@dimen/hero_eyebrow_bar_w"
+                android:layout_height="@dimen/hero_eyebrow_bar_h"
+                android:background="@drawable/bg_pill"
+                android:backgroundTint="@color/ember500"
+                android:importantForAccessibility="no" />
+
+            <TextView
+                android:id="@+id/heroEyebrow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="6dp"
+                android:text="@string/hero_eyebrow"
+                android:textAppearance="@style/TextAppearance.Mh.Eyebrow" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/heroTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/hero_copy_gap"
+            android:maxLines="3"
+            android:maxWidth="@dimen/hero_title_max_width"
+            android:textAppearance="@style/TextAppearance.Mh.HeroTitle"
+            tools:text="Dune: Part Two" />
+
+        <!-- Never wraps, never shrinks: it scrolls at a large font scale instead. -->
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/hero_copy_gap"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:id="@+id/heroMeta"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal" />
+        </HorizontalScrollView>
+
+        <TextView
+            android:id="@+id/heroGenres"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textAppearance="@style/TextAppearance.Mh.Meta"
+            tools:text="Science Fiction • Adventure" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/gap_button"
+            android:orientation="horizontal">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnHeroWatch"
+                style="@style/Widget.Mh.Pill.HeroEmber"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/touch_min"
+                android:layout_weight="1"
+                android:text="@string/action_where_to_watch"
+                app:icon="@drawable/ic_play_arrow"
+                app:iconGravity="textStart" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnHeroMyList"
+                style="@style/Widget.Mh.Pill.HeroGhost"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/touch_min"
+                android:layout_marginStart="@dimen/gap_button"
+                android:layout_weight="1"
+                android:text="@string/action_my_list"
+                app:icon="@drawable/ic_add"
+                app:iconGravity="textStart" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnHeroInfo"
+                style="@style/Widget.Mh.Pill.HeroGhost"
+                android:layout_width="@dimen/touch_min"
+                android:layout_height="@dimen/touch_min"
+                android:layout_marginStart="@dimen/gap_button"
+                android:contentDescription="@string/cd_more_info"
+                android:insetLeft="0dp"
+                android:insetRight="0dp"
+                android:paddingStart="0dp"
+                android:paddingEnd="0dp"
+                app:icon="@drawable/ic_info"
+                app:iconGravity="textStart"
+                app:iconPadding="0dp" />
+        </LinearLayout>
+    </LinearLayout>
+</FrameLayout>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- My List grid cell (PRD §6.6): 170dp tall, 10dp radius. -->
+<com.example.streamingappzb.ui.widget.PosterView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/mylist_poster_height"
+    android:background="?attr/selectableItemBackground"
+    app:mhCornerRadius="@dimen/radius_poster_grid"
+    app:mhShowLabel="true" />

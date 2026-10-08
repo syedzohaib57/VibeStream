@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  One episode row. Unaired episodes are listed but visibly marked, because a series page
+  that hides them makes it impossible to see how many are left in the season.
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical"
+    android:minHeight="@dimen/touch_min"
+    android:orientation="horizontal"
+    android:paddingStart="@dimen/gutter"
+    android:paddingTop="10dp"
+    android:paddingEnd="@dimen/gutter"
+    android:paddingBottom="10dp">
+
+    <FrameLayout
+        android:layout_width="@dimen/episode_thumb_width"
+        android:layout_height="@dimen/episode_thumb_height">
+
+        <ImageView
+            android:id="@+id/still"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/night700"
+            android:importantForAccessibility="no"
+            android:scaleType="centerCrop" />
+
+        <TextView
+            android:id="@+id/number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|start"
+            android:layout_margin="4dp"
+            android:background="@drawable/bg_rating_badge"
+            android:paddingStart="5dp"
+            android:paddingTop="1dp"
+            android:paddingEnd="5dp"
+            android:paddingBottom="1dp"
+            android:textAppearance="@style/TextAppearance.Mh.Num.Micro"
+            android:textColor="@color/text_hi"
+            tools:text="E1" />
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textAppearance="@style/TextAppearance.Mh.Body.Semibold"
+            tools:text="The Beginning" />
+
+        <TextView
+            android:id="@+id/sub"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textAppearance="@style/TextAppearance.Mh.Num.Caption"
+            tools:text="12 Mar · 48m" />
+    </LinearLayout>
+</LinearLayout>

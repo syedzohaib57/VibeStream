@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:paddingStart="@dimen/gutter_title"
+    android:paddingTop="22dp"
+    android:paddingEnd="@dimen/gutter_title"
+    android:paddingBottom="6dp">
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="@string/episodes"
+        android:textAppearance="@style/TextAppearance.Mh.Section" />
+
+    <TextView
+        android:id="@+id/season"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/season_one"
+        android:textAppearance="@style/TextAppearance.Mh.Meta" />
+</LinearLayout>

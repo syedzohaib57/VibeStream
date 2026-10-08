@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  A curated row (PRD §6.1): a 38dp header then a horizontal poster strip.
+  The `new` row's header shows a rose dot and "N new" instead of the chevron.
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/gap_row"
+    android:orientation="vertical">
+
+    <LinearLayout
+        style="@style/Widget.Mh.RowHeader"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/row_header_height">
+
+        <TextView
+            android:id="@+id/rowTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textAppearance="@style/TextAppearance.Mh.RowTitle"
+            tools:text="Classic drama" />
+
+        <!-- rose = new (PRD §2.1). The count is text, not only a colour. -->
+        <LinearLayout
+            android:id="@+id/newBadge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:visibility="gone"
+            tools:visibility="visible">
+
+            <View
+                android:layout_width="@dimen/new_dot"
+                android:layout_height="@dimen/new_dot"
+                android:background="@drawable/bg_circle"
+                android:backgroundTint="@color/rose500"
+                android:importantForAccessibility="no" />
+
+            <TextView
+                android:id="@+id/newCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="6dp"
+                android:textAppearance="@style/TextAppearance.Mh.Num.Caption"
+                android:textColor="@color/rose400"
+                tools:text="4 new" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/rowChevron"
+            android:layout_width="@dimen/icon"
+            android:layout_height="@dimen/icon"
+            android:importantForAccessibility="no"
+            android:src="@drawable/ic_chevron_right"
+            app:tint="@color/text_mid" />
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/posters"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clipToPadding="false"
+        android:orientation="horizontal"
+        android:overScrollMode="never"
+        android:paddingStart="@dimen/gutter"
+        android:paddingTop="4dp"
+        android:paddingEnd="@dimen/gap_poster"
+        android:paddingBottom="4dp"
+        android:scrollbars="none"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:itemCount="4"
+        tools:listitem="@layout/item_poster" />
+</LinearLayout>

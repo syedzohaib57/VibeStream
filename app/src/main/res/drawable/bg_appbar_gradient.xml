@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- App bar at rest (HomeScreen.jsx): 72% black -> 25% at 70% -> transparent. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="100dp" android:height="100dp"
+    android:viewportWidth="100" android:viewportHeight="100">
+    <path android:pathData="M0,0h100v100h-100z">
+        <aapt:attr name="android:fillColor">
+            <gradient android:type="linear"
+                android:startX="0" android:startY="0" android:endX="0" android:endY="100">
+                <item android:offset="0" android:color="@color/appbar_grad_top" />
+                <item android:offset="0.7" android:color="@color/appbar_grad_mid" />
+                <item android:offset="1" android:color="@color/appbar_grad_end" />
+            </gradient>
+        </aapt:attr>
+    </path>
+</vector>

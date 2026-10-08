@@ -1,0 +1,392 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Type scale and widget styles — PRD §2.2 / §2.3 / §5.
+
+  Weights reference the concrete Inter file rather than android:textFontWeight so
+  they resolve identically on API 24 (textFontWeight is API 28+).
+
+  Every type style sets lineHeight explicitly, in sp so it grows with the
+  font scale. It is not optional: the Material3 parent carries a fixed 20dp line
+  height, which silently collapses any style larger than body text as soon as its
+  text wraps — visible only at a large font scale, where it matters most.
+
+  The attribute is AppCompat's `lineHeight`, not `android:lineHeight` (API 28+), so it
+  works down to minSdk — MaterialTextView applies it and the theme inflates every
+  TextView as one. That is also why the base parent is TextAppearance.AppCompat: the
+  Material3 one carries an android:lineHeight, and Material reads that in preference,
+  which would silently discard every value below.
+
+  Every style showing a number carries fontFeatureSettings="tnum" (PRD §2.2).
+-->
+<resources>
+
+    <!-- ======================= Type ======================= -->
+
+    <style name="TextAppearance.Mh" parent="TextAppearance.AppCompat">
+        <item name="android:fontFamily">@font/inter_regular</item>
+        <item name="fontFamily">@font/inter_regular</item>
+        <item name="android:textColor">@color/text_hi</item>
+    </style>
+
+    <!-- 24 / 800 / -0.045em — the lowercase ember wordmark (PRD §8.5) -->
+    <style name="TextAppearance.Mh.Wordmark" parent="TextAppearance.Mh">
+        <item name="android:fontFamily">@font/inter_extrabold</item>
+        <item name="fontFamily">@font/inter_extrabold</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:letterSpacing">-0.045</item>
+        <item name="lineHeight">29sp</item>
+        <item name="android:textColor">@color/ember500</item>
+    </style>
+
+    <!-- 44 / 46 / 800 / -0.045em -->
+    <style name="TextAppearance.Mh.HeroTitle" parent="TextAppearance.Mh">
+        <item name="android:fontFamily">@font/inter_extrabold</item>
+        <item name="fontFamily">@font/inter_extrabold</item>
+        <item name="android:textSize">44sp</item>
+        <item name="android:letterSpacing">-0.045</item>
+        <item name="lineHeight">46sp</item>
+    </style>
+
+    <!-- 30 / 34 / 800 / -0.035em -->
+    <style name="TextAppearance.Mh.TitleXL" parent="TextAppearance.Mh">
+        <item name="android:fontFamily">@font/inter_extrabold</item>
+        <item name="fontFamily">@font/inter_extrabold</item>
+        <item name="android:textSize">30sp</item>
+        <item name="android:letterSpacing">-0.035</item>
+        <item name="lineHeight">34sp</item>
+    </style>
+
+    <!-- 26 / 800 / -0.03em — Search / Downloads / My List headers -->
+    <style name="TextAppearance.Mh.ScreenTitle" parent="TextAppearance.Mh">
+        <item name="android:fontFamily">@font/inter_extrabold</item>
+        <item name="fontFamily">@font/inter_extrabold</item>
+        <item name="android:textSize">26sp</item>
+        <item name="android:letterSpacing">-0.03</item>
+        <item name="lineHeight">31sp</item>
+    </style>
+
+    <!-- 19 / 800 / -0.025em -->
+    <style name="TextAppearance.Mh.RowTitle" parent="TextAppearance.Mh">
+        <item name="android:fontFamily">@font/inter_extrabold</item>
+        <item name="fontFamily">@font/inter_extrabold</item>
+        <item name="android:textSize">19sp</item>
+        <item name="android:letterSpacing">-0.025</item>
+        <item name="lineHeight">23sp</item>
+    </style>
+
+    <!-- 18 / 600 — section headings inside a screen -->
+    <style name="TextAppearance.Mh.Section" parent="TextAppearance.Mh">
+        <item name="android:fontFamily">@font/inter_semibold</item>
+        <item name="fontFamily">@font/inter_semibold</item>
+        <item name="android:textSize">18sp</item>
+        <item name="lineHeight">22sp</item>
+    </style>
+
+    <!-- 11 / 800 / +0.14em / uppercase — TODAY'S PICK -->
+    <style name="TextAppearance.Mh.Eyebrow" parent="TextAppearance.Mh">
+        <item name="android:fontFamily">@font/inter_extrabold</item>
+        <item name="fontFamily">@font/inter_extrabold</item>
+        <item name="android:textSize">11sp</item>
+        <item name="android:letterSpacing">0.14</item>
+        <item name="lineHeight">14sp</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textColor">@color/ember400</item>
+    </style>
+
+    <!-- 15 / 600 — buttons -->
+    <style name="TextAppearance.Mh.BodyL" parent="TextAppearance.Mh">
+        <item name="android:fontFamily">@font/inter_semibold</item>
+        <item name="fontFamily">@font/inter_semibold</item>
+        <item name="android:textSize">15sp</item>
+        <item name="lineHeight">19sp</item>
+    </style>
+
+    <!-- 14 / 21 / 400 — synopsis -->
+    <style name="TextAppearance.Mh.Body" parent="TextAppearance.Mh">
+        <item name="android:textSize">14sp</item>
+        <item name="lineHeight">21sp</item>
+    </style>
+
+    <!-- 14 / 600 — list-row titles -->
+    <style name="TextAppearance.Mh.Body.Semibold" parent="TextAppearance.Mh.Body">
+        <item name="android:fontFamily">@font/inter_semibold</item>
+        <item name="fontFamily">@font/inter_semibold</item>
+        <item name="lineHeight">18sp</item>
+    </style>
+
+    <!-- 15 / 500 — sheet row labels -->
+    <style name="TextAppearance.Mh.SheetLabel" parent="TextAppearance.Mh">
+        <item name="android:fontFamily">@font/inter_medium</item>
+        <item name="fontFamily">@font/inter_medium</item>
+        <item name="android:textSize">15sp</item>
+        <item name="lineHeight">19sp</item>
+    </style>
+
+    <!-- 13 — metadata, chips -->
+    <style name="TextAppearance.Mh.Meta" parent="TextAppearance.Mh">
+        <item name="android:textSize">13sp</item>
+        <item name="android:textColor">@color/text_mid</item>
+        <item name="lineHeight">17sp</item>
+    </style>
+
+    <style name="TextAppearance.Mh.Meta.Semibold" parent="TextAppearance.Mh.Meta">
+        <item name="android:fontFamily">@font/inter_semibold</item>
+        <item name="fontFamily">@font/inter_semibold</item>
+    </style>
+
+    <!-- 12 — time left, sizes -->
+    <style name="TextAppearance.Mh.Caption" parent="TextAppearance.Mh">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/text_mid</item>
+        <item name="lineHeight">16sp</item>
+    </style>
+
+    <style name="TextAppearance.Mh.Caption.Semibold" parent="TextAppearance.Mh.Caption">
+        <item name="android:fontFamily">@font/inter_semibold</item>
+        <item name="fontFamily">@font/inter_semibold</item>
+    </style>
+
+    <!-- 10 / 800 / +0.08em — HD badge, NEW EPISODE -->
+    <style name="TextAppearance.Mh.Micro" parent="TextAppearance.Mh">
+        <item name="android:fontFamily">@font/inter_extrabold</item>
+        <item name="fontFamily">@font/inter_extrabold</item>
+        <item name="android:textSize">10sp</item>
+        <item name="android:letterSpacing">0.08</item>
+        <item name="lineHeight">13sp</item>
+    </style>
+
+    <!-- 11 / 700 — episode badge, nav labels -->
+    <style name="TextAppearance.Mh.Micro.Eleven" parent="TextAppearance.Mh.Micro">
+        <item name="android:fontFamily">@font/inter_bold</item>
+        <item name="fontFamily">@font/inter_bold</item>
+        <item name="android:textSize">11sp</item>
+        <item name="android:letterSpacing">0.0</item>
+        <item name="lineHeight">14sp</item>
+    </style>
+
+    <!-- ===== Tabular-figure variants. Every number in the app uses one. ===== -->
+    <style name="TextAppearance.Mh.Num.Caption" parent="TextAppearance.Mh.Caption">
+        <item name="android:fontFeatureSettings">tnum</item>
+    </style>
+
+    <style name="TextAppearance.Mh.Num.Meta" parent="TextAppearance.Mh.Meta">
+        <item name="android:fontFeatureSettings">tnum</item>
+    </style>
+
+    <style name="TextAppearance.Mh.Num.Micro" parent="TextAppearance.Mh.Micro">
+        <item name="android:fontFeatureSettings">tnum</item>
+    </style>
+
+    <!-- The player's scrub readout. Tabular so the time does not jitter while dragging. -->
+    <style name="TextAppearance.Mh.Num.BodyL" parent="TextAppearance.Mh.BodyL">
+        <item name="android:fontFeatureSettings">tnum</item>
+    </style>
+
+    <!--
+      The double-tap skip indicator. Sits on the frame itself rather than in the chrome,
+      because the gesture works whether or not the chrome is showing.
+    -->
+    <!-- parent="" is required: a dotted name otherwise implies a Widget.Mh.Player parent. -->
+    <style name="Widget.Mh.Player.SkipHud" parent="">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_margin">@dimen/player_skip_hud_margin</item>
+        <item name="android:background">@drawable/bg_pill</item>
+        <item name="android:backgroundTint">@color/player_hud_bg</item>
+        <item name="android:drawablePadding">6dp</item>
+        <item name="android:drawableTint">@color/text_hi</item>
+        <item name="android:gravity">center</item>
+        <item name="android:paddingStart">14dp</item>
+        <item name="android:paddingTop">10dp</item>
+        <item name="android:paddingEnd">14dp</item>
+        <item name="android:paddingBottom">10dp</item>
+        <item name="android:textAppearance">@style/TextAppearance.Mh.Num.Caption</item>
+        <item name="android:textColor">@color/text_hi</item>
+        <item name="android:visibility">gone</item>
+    </style>
+
+    <!-- ======================= Pills (PRD §5) =======================
+         Height 44-48dp. The design's 40dp is overridden: 44dp minimum touch
+         target is acceptance item 13. -->
+
+    <style name="Widget.Mh.Pill" parent="Widget.Material3.Button">
+        <item name="android:minHeight">@dimen/touch_min</item>
+        <item name="android:minWidth">0dp</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:paddingStart">16dp</item>
+        <item name="android:paddingEnd">16dp</item>
+        <item name="android:textAppearance">@style/TextAppearance.Mh.BodyL</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:letterSpacing">0.0</item>
+        <item name="cornerRadius">@dimen/radius_pill</item>
+        <item name="iconSize">@dimen/icon_md</item>
+        <item name="iconPadding">6dp</item>
+        <item name="iconGravity">textStart</item>
+        <item name="elevation">0dp</item>
+    </style>
+
+    <!-- ember = play. Text is #1A0A00 for 9.4:1 contrast (PRD §8). -->
+    <style name="Widget.Mh.Pill.Ember" parent="Widget.Mh.Pill">
+        <item name="backgroundTint">@color/ember500</item>
+        <item name="android:textColor">@color/text_on_ember</item>
+        <item name="iconTint">@color/text_on_ember</item>
+        <item name="rippleColor">@color/text_on_ember</item>
+    </style>
+
+    <style name="Widget.Mh.Pill.Ghost" parent="Widget.Mh.Pill">
+        <item name="backgroundTint">@color/night600</item>
+        <item name="android:textColor">@color/text_hi</item>
+        <item name="iconTint">@color/text_hi</item>
+    </style>
+
+    <!-- cyan = offline. Used for Download / Download season. -->
+    <style name="Widget.Mh.Pill.Cyan" parent="Widget.Mh.Pill">
+        <item name="backgroundTint">@color/pill_cyan_bg</item>
+        <item name="android:textColor">@color/cyan400</item>
+        <item name="iconTint">@color/cyan400</item>
+    </style>
+
+    <!--
+      Home hero secondary buttons: 8dp radius, translucent white.
+
+      The design asks for 16% white behind a 10dp *backdrop* blur. Android has no
+      backdrop-filter for a View — `setRenderEffect` blurs a view's own content, not what
+      is behind it — so this uses the PRD's own documented fallback of a flat 22% white.
+      Over the hero's drawn gradient the two are visually indistinguishable.
+    -->
+    <style name="Widget.Mh.Pill.HeroGhost" parent="Widget.Mh.Pill">
+        <item name="backgroundTint">@color/pill_ghost_flat</item>
+        <item name="android:textColor">@color/text_hi</item>
+        <item name="iconTint">@color/text_hi</item>
+        <item name="cornerRadius">@dimen/radius_button_home</item>
+        <item name="android:minHeight">@dimen/hero_button_height</item>
+    </style>
+
+    <style name="Widget.Mh.Pill.HeroEmber" parent="Widget.Mh.Pill.Ember">
+        <item name="cornerRadius">@dimen/radius_button_home</item>
+        <item name="android:minHeight">@dimen/hero_button_height</item>
+    </style>
+
+    <!-- Player bottom chips: 36dp, compact. -->
+    <style name="Widget.Mh.Pill.PlayerChip" parent="Widget.Mh.Pill.Ghost">
+        <item name="android:minHeight">@dimen/player_chip_height</item>
+        <item name="android:paddingStart">@dimen/player_chip_padding_h</item>
+        <item name="android:paddingEnd">@dimen/player_chip_padding_h</item>
+        <item name="android:textAppearance">@style/TextAppearance.Mh.Meta.Semibold</item>
+        <item name="android:textColor">@color/text_hi</item>
+        <item name="iconSize">18dp</item>
+    </style>
+
+    <!-- The quality chip — the PRD's central element. Ember outline so it reads
+         as the one control that always states the data cost. -->
+    <style name="Widget.Mh.Pill.QualityChip" parent="Widget.Mh.Pill.PlayerChip">
+        <item name="backgroundTint">@null</item>
+        <item name="android:background">@drawable/bg_pill_emberline</item>
+        <item name="android:textColor">@color/ember400</item>
+        <item name="iconTint">@color/ember400</item>
+        <item name="android:fontFeatureSettings">tnum</item>
+    </style>
+
+    <!-- ======================= Icon buttons =======================
+         44dp target even when the glyph is 20-24dp (PRD §2.3). -->
+
+    <style name="Widget.Mh.IconButton" parent="">
+        <item name="android:layout_width">@dimen/icon_button_lg</item>
+        <item name="android:layout_height">@dimen/icon_button_lg</item>
+        <item name="android:background">?attr/selectableItemBackgroundBorderless</item>
+        <item name="android:scaleType">center</item>
+        <item name="android:tint">@color/text_hi</item>
+    </style>
+
+    <!-- Floating round button over artwork (Back / Share on Title detail). -->
+    <!-- 44dp of target around the design's 40dp circle (acceptance item 14). -->
+    <style name="Widget.Mh.RoundButton" parent="">
+        <item name="android:layout_width">@dimen/touch_min</item>
+        <item name="android:layout_height">@dimen/touch_min</item>
+        <item name="android:background">@drawable/bg_circle_inset</item>
+        <item name="android:backgroundTint">@color/round_button_bg</item>
+        <item name="android:scaleType">center</item>
+        <item name="android:tint">@color/text_hi</item>
+    </style>
+
+    <!-- ======================= Chips ======================= -->
+
+    <style name="Widget.Mh.Chip" parent="">
+        <item name="android:layout_height">@dimen/chip_touch_height</item>
+        <item name="android:minWidth">0dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:paddingStart">@dimen/chip_padding_h</item>
+        <item name="android:paddingEnd">@dimen/chip_padding_h</item>
+        <item name="android:textAppearance">@style/TextAppearance.Mh.Meta.Semibold</item>
+        <item name="android:textColor">@color/text_hi</item>
+        <item name="android:background">@drawable/bg_chip_unselected_inset</item>
+        <item name="android:singleLine">true</item>
+    </style>
+
+    <!-- ======================= Rows and headers ======================= -->
+
+    <style name="Widget.Mh.RowHeader" parent="">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/row_header_height</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:paddingStart">@dimen/gutter</item>
+        <item name="android:paddingEnd">@dimen/row_header_padding_end</item>
+    </style>
+
+    <!-- ======================= Badges ======================= -->
+
+    <style name="Widget.Mh.Badge.HD" parent="">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/bg_badge_hd</item>
+        <item name="android:paddingStart">5dp</item>
+        <item name="android:paddingEnd">5dp</item>
+        <item name="android:paddingTop">1dp</item>
+        <item name="android:paddingBottom">1dp</item>
+        <item name="android:textAppearance">@style/TextAppearance.Mh.Micro</item>
+        <item name="android:textColor">@color/text_hi</item>
+    </style>
+
+    <style name="Widget.Mh.Badge.CC" parent="Widget.Mh.Badge.HD">
+        <item name="android:background">@drawable/bg_badge_cc</item>
+        <item name="android:textColor">@color/text_mid</item>
+    </style>
+
+    <!-- ======================= Progress ======================= -->
+
+    <style name="Widget.Mh.ProgressBar.Ember" parent="Widget.AppCompat.ProgressBar.Horizontal">
+        <item name="android:progressDrawable">@drawable/progress_ember</item>
+        <item name="android:max">100</item>
+        <item name="android:indeterminate">false</item>
+    </style>
+
+    <style name="Widget.Mh.ProgressBar.Cyan" parent="Widget.AppCompat.ProgressBar.Horizontal">
+        <item name="android:progressDrawable">@drawable/progress_cyan</item>
+        <item name="android:max">100</item>
+        <item name="android:indeterminate">false</item>
+    </style>
+
+    <style name="Widget.Mh.ProgressBar.Episode" parent="Widget.AppCompat.ProgressBar.Horizontal">
+        <item name="android:progressDrawable">@drawable/progress_episode</item>
+        <item name="android:max">100</item>
+        <item name="android:indeterminate">false</item>
+    </style>
+
+    <!-- ======================= Animation ======================= -->
+
+    <style name="Animation.Mh.Activity" parent="@android:style/Animation.Activity">
+        <item name="android:activityOpenEnterAnimation">@anim/mh_enter_from_end</item>
+        <item name="android:activityOpenExitAnimation">@anim/mh_exit_to_start</item>
+        <item name="android:activityCloseEnterAnimation">@anim/mh_enter_from_start</item>
+        <item name="android:activityCloseExitAnimation">@anim/mh_exit_to_end</item>
+    </style>
+
+    <style name="Animation.Mh.Player" parent="@android:style/Animation.Activity">
+        <item name="android:activityOpenEnterAnimation">@anim/mh_slide_up</item>
+        <item name="android:activityOpenExitAnimation">@anim/mh_fade_out</item>
+        <item name="android:activityCloseEnterAnimation">@anim/mh_fade_in</item>
+        <item name="android:activityCloseExitAnimation">@anim/mh_slide_down</item>
+    </style>
+</resources>

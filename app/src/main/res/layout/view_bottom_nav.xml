@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Bottom nav (PRD §5 / LibraryScreens.jsx BottomNav): 97% #050505 with a 1dp top border at
+  6% white; the active item is ember. Hand-built rather than BottomNavigationView so the
+  cyan download badge and the exact label treatment match the design.
+-->
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:parentTag="android.widget.LinearLayout">
+
+    <!-- Home -->
+    <LinearLayout
+        android:id="@+id/navHome"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:contentDescription="@string/nav_home"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/iconHome"
+            android:layout_width="@dimen/icon_lg"
+            android:layout_height="@dimen/icon_lg"
+            android:importantForAccessibility="no"
+            android:src="@drawable/ic_home" />
+
+        <TextView
+            android:id="@+id/labelHome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:text="@string/nav_home"
+            android:textAppearance="@style/TextAppearance.Mh.Micro.Eleven" />
+    </LinearLayout>
+
+    <!-- Search -->
+    <LinearLayout
+        android:id="@+id/navSearch"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:contentDescription="@string/nav_search"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/iconSearch"
+            android:layout_width="@dimen/icon_lg"
+            android:layout_height="@dimen/icon_lg"
+            android:importantForAccessibility="no"
+            android:src="@drawable/ic_search" />
+
+        <TextView
+            android:id="@+id/labelSearch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:text="@string/nav_search"
+            android:textAppearance="@style/TextAppearance.Mh.Micro.Eleven" />
+    </LinearLayout>
+
+    <!-- Downloads, with the active-download badge -->
+    <LinearLayout
+        android:id="@+id/navDownloads"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:contentDescription="@string/nav_upcoming"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/iconDownloads"
+                android:layout_width="@dimen/icon_lg"
+                android:layout_height="@dimen/icon_lg"
+                android:importantForAccessibility="no"
+                android:src="@drawable/ic_schedule" />
+
+            <TextView
+                android:id="@+id/badgeDownloads"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/bottom_nav_badge_min"
+                android:layout_gravity="top|end"
+                android:layout_marginTop="-5dp"
+                android:layout_marginEnd="-10dp"
+                android:background="@drawable/bg_pill"
+                android:backgroundTint="@color/cyan500"
+                android:gravity="center"
+                android:minWidth="@dimen/bottom_nav_badge_min"
+                android:paddingStart="4dp"
+                android:paddingEnd="4dp"
+                android:textAppearance="@style/TextAppearance.Mh.Num.Micro"
+                android:textColor="@color/text_on_cyan"
+                android:visibility="gone"
+                tools:text="2"
+                tools:visibility="visible" />
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/labelDownloads"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:text="@string/nav_upcoming"
+            android:textAppearance="@style/TextAppearance.Mh.Micro.Eleven" />
+    </LinearLayout>
+
+    <!-- My List -->
+    <LinearLayout
+        android:id="@+id/navList"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:contentDescription="@string/nav_list"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/iconList"
+            android:layout_width="@dimen/icon_lg"
+            android:layout_height="@dimen/icon_lg"
+            android:importantForAccessibility="no"
+            android:src="@drawable/ic_bookmark" />
+
+        <TextView
+            android:id="@+id/labelList"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:text="@string/nav_list"
+            android:textAppearance="@style/TextAppearance.Mh.Micro.Eleven" />
+    </LinearLayout>
+</merge>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Behind the player header once the chrome is full-bleed over the video.
+
+  The title and the close button used to sit on the page background, where they were
+  legible by default. Over a bright frame they are not, so the scrim is what keeps them
+  readable rather than a decoration. Angle 270 runs top to bottom.
+-->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <gradient
+        android:angle="270"
+        android:endColor="@color/transparent"
+        android:startColor="@color/player_scrim_edge"
+        android:type="linear" />
+</shape>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  mhEase — PRD §2.3. cubic-bezier(0.05, 0.7, 0.1, 1), the easing on every enter
+  animation in the design (`mh-ease` in moviehub.css).
+-->
+<pathInterpolator
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:controlX1="0.05"
+    android:controlY1="0.7"
+    android:controlX2="0.1"
+    android:controlY2="1" />

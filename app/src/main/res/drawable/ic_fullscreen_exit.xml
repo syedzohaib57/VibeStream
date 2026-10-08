@@ -1,0 +1,10 @@
+<!-- Leave fullscreen: the same brackets, turned inward. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="960"
+    android:viewportHeight="960">
+    <path
+        android:fillColor="@android:color/white"
+        android:pathData="M400,400h-240v-80h160v-160h80z M560,400v-240h80v160h160v80h-240z M400,560v240h-80v-160h-160v-80h240z M560,560h240v80h-160v160h-80v-240z" />
+</vector>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  MovieHub has no light variant — night resolves to the same true-black base as
+  values/themes.xml so the two can never drift apart.
+-->
+<resources>
+    <style name="Theme.MovieHub" parent="Base.Theme.MovieHub" />
+</resources>

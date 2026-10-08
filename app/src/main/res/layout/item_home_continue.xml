@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Continue watching (PRD §6.1). Hidden entirely when there is nothing to resume. -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="8dp"
+    android:layout_marginBottom="@dimen/gap_row"
+    android:orientation="vertical">
+
+    <LinearLayout
+        style="@style/Widget.Mh.RowHeader"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/row_header_height">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/row_continue"
+            android:textAppearance="@style/TextAppearance.Mh.RowTitle" />
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/continueCards"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clipToPadding="false"
+        android:orientation="horizontal"
+        android:overScrollMode="never"
+        android:paddingStart="@dimen/gutter"
+        android:paddingTop="4dp"
+        android:paddingEnd="@dimen/gap_poster"
+        android:paddingBottom="4dp"
+        android:scrollbars="none"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:itemCount="2"
+        tools:listitem="@layout/item_continue_card" />
+</LinearLayout>

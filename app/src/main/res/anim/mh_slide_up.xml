@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Player opens like a sheet: 280ms, the sheet duration (PRD §2.3). -->
+<set xmlns:android="http://schemas.android.com/apk/res/android"
+    android:interpolator="@interpolator/mh_ease">
+    <translate android:fromYDelta="100%p" android:toYDelta="0" android:duration="280" />
+</set>

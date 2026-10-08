@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  MovieHub is a true-black app — there is no light variant. values-night/ points at
+  the same base so day and night can never diverge.
+-->
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <style name="Base.Theme.MovieHub" parent="Theme.Material3.Dark.NoActionBar">
+        <!-- Inter everywhere (PRD §2.2), bundled not downloadable -->
+        <item name="android:fontFamily">@font/inter</item>
+        <item name="fontFamily">@font/inter</item>
+
+        <!-- Surfaces -->
+        <item name="android:windowBackground">@color/night900</item>
+        <item name="android:colorBackground">@color/night900</item>
+        <item name="colorSurface">@color/night800</item>
+        <item name="colorSurfaceVariant">@color/night700</item>
+        <item name="colorOnSurface">@color/text_hi</item>
+        <item name="colorOnSurfaceVariant">@color/text_mid</item>
+        <item name="colorOutline">@color/night600</item>
+
+        <!-- ember = play and progress -->
+        <item name="colorPrimary">@color/ember500</item>
+        <item name="colorOnPrimary">@color/text_on_ember</item>
+        <item name="colorPrimaryContainer">@color/ember600</item>
+
+        <!-- cyan = offline and saving data -->
+        <item name="colorSecondary">@color/cyan500</item>
+        <item name="colorOnSecondary">@color/text_on_cyan</item>
+
+        <!-- rose = new and ads -->
+        <item name="colorTertiary">@color/rose500</item>
+        <item name="colorOnTertiary">@color/text_hi</item>
+
+        <item name="android:textColorPrimary">@color/text_hi</item>
+        <item name="android:textColorSecondary">@color/text_mid</item>
+        <item name="android:textColorTertiary">@color/text_low</item>
+        <item name="android:textColorHint">@color/text_low</item>
+
+        <!-- Edge to edge (PRD §8): transparent bars, light status icons off -->
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:windowLightNavigationBar" tools:targetApi="27">false</item>
+
+        <item name="bottomSheetDialogTheme">@style/ThemeOverlay.Mh.BottomSheet</item>
+        <item name="android:windowAnimationStyle">@style/Animation.Mh.Activity</item>
+    </style>
+
+    <style name="Theme.MovieHub" parent="Base.Theme.MovieHub" />
+
+    <!--
+      Cold start: core-splashscreen paints the launcher mark on the system splash while
+      the process warms. The ember Lottie reveal then plays as an overlay *inside*
+      MainActivity, so it never blocks the first frame (PRD §8).
+    -->
+    <style name="Theme.MovieHub.Splash" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">@color/night900</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/app_icon</item>
+        <item name="postSplashScreenTheme">@style/Theme.MovieHub</item>
+    </style>
+
+    <!-- Player: no window animation, keeps the surface from flashing on rotate. -->
+    <style name="Theme.MovieHub.Player" parent="Base.Theme.MovieHub">
+        <item name="android:windowBackground">@color/player_bg</item>
+        <item name="android:windowAnimationStyle">@style/Animation.Mh.Player</item>
+    </style>
+
+    <style name="ThemeOverlay.Mh.BottomSheet" parent="ThemeOverlay.Material3.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/Widget.Mh.BottomSheet</item>
+        <item name="android:navigationBarColor">@color/night800</item>
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:backgroundDimAmount">0.6</item>
+        <item name="android:fontFamily">@font/inter</item>
+        <item name="fontFamily">@font/inter</item>
+    </style>
+
+    <!--
+      Sheets are `night800` with 22dp top corners (PRD §2.3 / §5).
+
+      elevationOverlayEnabled must be false: Material3's dark theme lightens a surface in
+      proportion to its elevation, which turns the sheet mid-grey and loses the true-black
+      palette entirely. The colour comes from backgroundTint and the corners from the shape
+      overlay, so Material still owns the drawable and its drag behaviour.
+    -->
+    <style name="Widget.Mh.BottomSheet" parent="Widget.Material3.BottomSheet.Modal">
+        <item name="backgroundTint">@color/night800</item>
+        <item name="elevationOverlayEnabled">false</item>
+        <item name="shapeAppearanceOverlay">@style/ShapeAppearance.Mh.Sheet</item>
+        <item name="behavior_peekHeight">auto</item>
+    </style>
+
+    <style name="ShapeAppearance.Mh.Sheet" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSizeTopLeft">@dimen/radius_sheet</item>
+        <item name="cornerSizeTopRight">@dimen/radius_sheet</item>
+        <item name="cornerSizeBottomLeft">0dp</item>
+        <item name="cornerSizeBottomRight">0dp</item>
+    </style>
+</resources>

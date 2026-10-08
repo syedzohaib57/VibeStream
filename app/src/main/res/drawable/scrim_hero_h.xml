@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Hero horizontal scrim — HomeScreen.jsx:
+  linear-gradient(90deg, rgba(5,5,5,.55), transparent 62%)
+  Mirrored for RTL by drawable-ldrtl/ so the dark edge always follows `start`.
+-->
+<vector
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="100dp"
+    android:height="100dp"
+    android:viewportWidth="100"
+    android:viewportHeight="100">
+    <path android:pathData="M0,0h100v100h-100z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:endX="100"
+                android:endY="0"
+                android:startX="0"
+                android:startY="0"
+                android:type="linear">
+                <item
+                    android:color="@color/hero_scrim_side"
+                    android:offset="0" />
+                <item
+                    android:color="@color/transparent"
+                    android:offset="0.62" />
+                <item
+                    android:color="@color/transparent"
+                    android:offset="1" />
+            </gradient>
+        </aapt:attr>
+    </path>
+</vector>

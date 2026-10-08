@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- "Skip in 5" before the 5s unlock: 72% dark with a 30% white hairline. -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="rectangle">
+    <corners android:radius="@dimen/radius_badge_sm" />
+    <solid android:color="@color/ad_badge_bg" />
+    <stroke android:width="@dimen/hairline" android:color="@color/ad_skip_border" />
+</shape>

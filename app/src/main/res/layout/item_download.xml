@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  A download row (PRD §6.5): a 104x58 thumbnail with a play glyph when it is ready, the
+  title and episode, then the status — always as text, never colour alone (PRD §8).
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:paddingStart="@dimen/gutter"
+    android:paddingTop="8dp"
+    android:paddingEnd="8dp"
+    android:paddingBottom="8dp">
+
+    <com.example.streamingappzb.ui.widget.PosterView
+        android:id="@+id/thumb"
+        android:layout_width="@dimen/download_thumb_width"
+        android:layout_height="@dimen/download_thumb_height"
+        app:mhCornerRadius="@dimen/radius_poster_row"
+        app:mhShowLabel="false">
+
+        <ImageView
+            android:id="@+id/playGlyph"
+            android:layout_width="26dp"
+            android:layout_height="26dp"
+            android:layout_gravity="center"
+            android:importantForAccessibility="no"
+            android:src="@drawable/ic_play_circle_fill"
+            android:visibility="gone"
+            app:tint="@color/text_hi"
+            tools:visibility="visible" />
+    </com.example.streamingappzb.ui.widget.PosterView>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:textAppearance="@style/TextAppearance.Mh.Body.Semibold"
+            tools:text="Moonlit Night" />
+
+        <TextView
+            android:id="@+id/subtitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:textAppearance="@style/TextAppearance.Mh.Num.Caption"
+            tools:text="Ep 1 · First Step · 360p" />
+
+        <TextView
+            android:id="@+id/status"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/TextAppearance.Mh.Num.Caption"
+            tools:text="212 MB · Expires in 26 days" />
+
+        <LinearLayout
+            android:id="@+id/progressRow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:visibility="gone"
+            tools:visibility="visible">
+
+            <ProgressBar
+                android:id="@+id/progress"
+                style="@style/Widget.Mh.ProgressBar.Cyan"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/download_progress_height"
+                android:layout_weight="1"
+                tools:progress="45" />
+
+            <TextView
+                android:id="@+id/progressLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:minWidth="58dp"
+                android:textAlignment="viewEnd"
+                android:textAppearance="@style/TextAppearance.Mh.Num.Micro"
+                android:textColor="@color/text_mid"
+                tools:text="45%" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/btnAction"
+        android:layout_width="@dimen/touch_min"
+        android:layout_height="@dimen/touch_min"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:contentDescription="@string/cd_download_pause"
+        android:padding="11dp"
+        android:src="@drawable/ic_pause"
+        app:tint="@color/text_mid" />
+</LinearLayout>

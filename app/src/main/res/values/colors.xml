@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  MovieHub "Cinema" palette — PRD §2.1, mirrored from ui_kits/MovieHub/moviehub.css.
+
+  The CSS token names are legacy from the first pass: mh-gold-* is now ember and
+  mh-teal-* is now cyan. These are the real names.
+
+  Colour roles are FIXED and must never be swapped:
+      ember = play and progress
+      rose  = new and ads
+      cyan  = offline and saving data
+
+  Trade dress (PRD §8.5 / acceptance item 1): no colour here may sit within
+  CIEDE2000 dE 10 of #E50914. TradeDressTest enforces that at build time.
+-->
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="UnusedResources">
+
+    <!-- ===== Surfaces ===== -->
+    <color name="night900">#FF050505</color>
+    <color name="night800">#FF0E0E10</color>
+    <color name="night700">#FF18181B</color>
+    <color name="night600">#FF232327</color>
+    <color name="night500">#FF34343A</color>
+    <color name="night400">#FF56565E</color>
+
+    <!-- ===== Ember — the primary accent: play, progress, selection ===== -->
+    <color name="ember400">#FFFFB15C</color>
+    <color name="ember500">#FFFF8A2B</color>
+    <color name="ember600">#FFE0661A</color>
+
+    <!-- ===== Rose — new episodes and ad breaks ===== -->
+    <color name="rose400">#FFFF6B8B</color>
+    <color name="rose500">#FFF0436A</color>
+    <color name="rose600">#FFC62B52</color>
+
+    <!-- ===== Cyan — offline and data saving ===== -->
+    <color name="cyan400">#FF5CE1E6</color>
+    <color name="cyan500">#FF22C3CC</color>
+    <color name="cyan600">#FF1497A0</color>
+
+    <!-- ===== Text ===== -->
+    <color name="text_hi">#FFFFFFFF</color>
+    <color name="text_mid">#FFB3B3B8</color>
+    <color name="text_low">#FF7C7C84</color>
+    <color name="text_on_ember">#FF1A0A00</color>
+    <color name="text_on_cyan">#FF04201F</color>
+
+    <!-- ===== Player chassis ===== -->
+    <color name="player_bg">#FF07060A</color>
+
+    <!-- ===== Derived alpha values used by the design =====
+         Named by purpose, not by opacity, so a token change lands in one place. -->
+
+    <!-- App bar -->
+    <color name="appbar_solid">#F0050505</color>            <!-- 94% night900 -->
+    <color name="appbar_grad_top">#B8000000</color>         <!-- 72% black -->
+    <color name="appbar_grad_mid">#40000000</color>         <!-- 25% black -->
+    <color name="appbar_grad_end">#00000000</color>
+
+    <!-- Pills -->
+    <color name="pill_ghost">#29FFFFFF</color>              <!-- 16% white -->
+    <color name="pill_ghost_flat">#38FFFFFF</color>         <!-- 22% white, pre-API-31 -->
+    <color name="pill_cyan_bg">#2924A19C</color>            <!-- 16% cyan -->
+    <color name="pill_ember_bg">#1AE8B44A</color>           <!-- 10% ember -->
+    <color name="pill_ember_border">#8CE8B44A</color>       <!-- 55% ember -->
+    <color name="data_pill_bg">#1FFFFFFF</color>            <!-- 12% white -->
+    <color name="data_pill_bg_saver">#2922C3CC</color>      <!-- 16% cyan -->
+
+    <!-- Chips -->
+    <color name="chip_bg">#40000000</color>                 <!-- 25% black -->
+    <color name="chip_border">#57FFFFFF</color>             <!-- 34% white -->
+    <color name="chip_selected_bg">#FFFFFFFF</color>
+    <color name="chip_selected_text">#FF050505</color>
+
+    <!-- Posters -->
+    <color name="poster_inset_ring">#0FF0ECF2</color>       <!-- 6% white -->
+    <color name="poster_label_scrim_end">#E00C0A11</color>  <!-- 88% ink -->
+    <color name="poster_placeholder">#FF18181B</color>
+    <color name="rank_numeral_stroke">#4DF0ECF2</color>     <!-- 30% white -->
+    <color name="rank_numeral_fill">#FF050505</color>       <!-- night900 -->
+
+    <!-- Player chrome over a full-bleed frame -->
+    <color name="player_scrim_edge">#B3000000</color>       <!-- 70% black -->
+    <color name="player_scrim_deep">#D9000000</color>       <!-- 85% black -->
+    <color name="player_scrim_mid">#73000000</color>        <!-- 45% black -->
+    <color name="player_hud_bg">#CC0E0E10</color>           <!-- 80% night800 -->
+    <color name="player_hud_track">#40F0ECF2</color>        <!-- 25% white -->
+
+
+    <!-- Badges and rings -->
+    <color name="hd_badge_border">#66FFFFFF</color>         <!-- 40% white -->
+    <color name="cc_badge_border">#FF56565E</color>
+    <color name="ep_badge_bg">#B30C0A11</color>             <!-- 70% ink -->
+    <color name="play_glyph_bg">#8C000000</color>           <!-- 55% black -->
+    <color name="play_glyph_ring">#D9FFFFFF</color>         <!-- 85% white -->
+    <color name="round_button_bg">#8C0C0A11</color>         <!-- 55% ink -->
+    <color name="ember_thumb_halo">#38FFB15C</color>        <!-- 22% ember400 -->
+
+    <!-- Tracks -->
+    <color name="track_on_dark">#2EF0ECF2</color>           <!-- 18% white -->
+    <color name="track_episode">#33F0ECF2</color>           <!-- 20% white -->
+
+    <!-- Ads -->
+    <color name="ad_badge_bg">#B80C0A11</color>             <!-- 72% ink -->
+    <color name="ad_skip_border">#4DF0ECF2</color>          <!-- 30% white -->
+    <color name="ad_slate_start">#FF17807C</color>
+    <color name="ad_slate_end">#FF13101A</color>
+    <color name="ad_icon">#99F0ECF2</color>                 <!-- 60% white -->
+    <color name="ad_label">#B3F0ECF2</color>                <!-- 70% white -->
+
+    <!-- Sheets, nav, cards, scrims -->
+    <color name="bottom_nav_bg">#F7050505</color>           <!-- 97% night900 -->
+    <color name="bottom_nav_border">#0FFFFFFF</color>       <!-- 6% white -->
+    <color name="upnext_card_bg">#F013101A</color>          <!-- 94% ink -->
+    <color name="subtitle_bg">#9E000000</color>             <!-- 62% black -->
+    <color name="player_vignette_edge">#8C000000</color>    <!-- 55% black -->
+
+    <!-- Hero scrims -->
+    <color name="hero_scrim_mid">#9E050505</color>          <!-- 62% night900 -->
+    <color name="hero_scrim_side">#8C050505</color>         <!-- 55% night900 -->
+
+    <!-- Motif / rosette light colours (fixed, alpha-based, drawn over per-title art) -->
+    <color name="motif_ember_key">#80FFB15C</color>         <!-- 50% ember400 -->
+    <color name="motif_ember_soft">#38FF8A2B</color>        <!-- 22% ember500 -->
+    <color name="motif_ember_mid">#4DFFB15C</color>         <!-- 30% ember400 -->
+    <color name="motif_cyan_rim">#4D5CE1E6</color>          <!-- 30% cyan400 -->
+    <color name="motif_sheen">#17FFFFFF</color>             <!-- 9% white -->
+    <color name="motif_spotlight">#38FFECD2</color>         <!-- 22% warm white -->
+    <color name="rosette_core">#8CFFECD2</color>            <!-- 55% warm white -->
+    <color name="rosette_inner">#66FFB15C</color>           <!-- 40% ember400 -->
+    <color name="rosette_outer">#1FFF8A2B</color>           <!-- 12% ember500 -->
+
+    <!-- Storage bar -->
+    <color name="storage_other">#FF56565E</color>
+    <color name="storage_free">#FF34343A</color>
+
+    <color name="transparent">#00000000</color>
+
+    <!-- Badges over artwork we do not control: opaque enough to stay legible on any poster. -->
+    <color name="rating_badge_bg">#CC0B0B0D</color>
+    <color name="rose_badge_bg">#33E5484D</color>
+
+    <!-- Provider logo chip. The logos are supplied on light backgrounds by TMDB, so the
+         chip is light too rather than tinting artwork we are not allowed to alter. -->
+    <color name="provider_chip_bg">#FFF2F2F4</color>
+</resources>

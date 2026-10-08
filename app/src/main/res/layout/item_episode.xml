@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  One episode row (PRD §6.2): a 120x68 thumbnail with an E{n} badge and an ember progress
+  bar, the name, runtime and size, then the download glyph.
+
+  The download slot holds either a glyph or a progress ring — every state is also stated in
+  the meta line's text, so colour is never the only signal (PRD §8).
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?attr/selectableItemBackground"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:paddingStart="@dimen/gutter_title"
+    android:paddingTop="8dp"
+    android:paddingEnd="10dp"
+    android:paddingBottom="8dp">
+
+    <com.example.streamingappzb.ui.widget.PosterView
+        android:id="@+id/thumb"
+        android:layout_width="@dimen/episode_thumb_width"
+        android:layout_height="@dimen/episode_thumb_height"
+        app:mhCornerRadius="@dimen/radius_poster_row"
+        app:mhShowLabel="false">
+
+        <TextView
+            android:id="@+id/epBadge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|start"
+            android:layout_margin="6dp"
+            android:background="@drawable/bg_r3"
+            android:backgroundTint="@color/ep_badge_bg"
+            android:paddingStart="5dp"
+            android:paddingTop="1dp"
+            android:paddingEnd="5dp"
+            android:paddingBottom="1dp"
+            android:textAppearance="@style/TextAppearance.Mh.Num.Micro"
+            android:textColor="@color/text_hi"
+            tools:text="4" />
+
+        <ProgressBar
+            android:id="@+id/epProgress"
+            style="@style/Widget.Mh.ProgressBar.Episode"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/episode_progress_height"
+            android:layout_gravity="bottom"
+            android:visibility="gone"
+            tools:progress="60"
+            tools:visibility="visible" />
+    </com.example.streamingappzb.ui.widget.PosterView>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/epName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:textAppearance="@style/TextAppearance.Mh.Body.Semibold"
+            tools:text="The Promise" />
+
+        <TextView
+            android:id="@+id/epMeta"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/TextAppearance.Mh.Num.Caption"
+            tools:text="45 min · Downloaded" />
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/downloadSlot"
+        android:layout_width="@dimen/touch_min"
+        android:layout_height="@dimen/touch_min"
+        android:background="?attr/selectableItemBackgroundBorderless">
+
+        <ImageView
+            android:id="@+id/dlGlyph"
+            android:layout_width="@dimen/download_glyph"
+            android:layout_height="@dimen/download_glyph"
+            android:layout_gravity="center"
+            android:importantForAccessibility="no"
+            android:src="@drawable/ic_download_for_offline"
+            app:tint="@color/text_mid" />
+
+        <com.example.streamingappzb.ui.widget.ProgressRingView
+            android:id="@+id/dlRing"
+            android:layout_width="@dimen/download_glyph"
+            android:layout_height="@dimen/download_glyph"
+            android:layout_gravity="center"
+            android:visibility="gone"
+            app:mhRingColor="@color/cyan400"
+            app:mhRingStroke="3dp"
+            app:mhRingTrackColor="@color/night500"
+            tools:visibility="visible" />
+    </FrameLayout>
+</LinearLayout>
